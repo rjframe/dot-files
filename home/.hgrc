@@ -1,0 +1,36 @@
+# example user config (see 'hg help config' for more info)
+[ui]
+# name and email, e.g.
+# username = Jane Doe <jdoe@example.com>
+username = Ryan Frame code@ryanjframe.com
+# gvim isn't working on Windows.
+editor = vim
+
+[editor-tools]
+gvim.args = -f $FILES
+gvim.argsln = -f +$LINENUM $FILE
+gvim.argssearch = -f -c":set hls" -c"/$SEARCH/" +$LINENUM $FILE
+vim.args = -f $FILES
+vim.argsln = -f +$LINENUM $FILE
+vim.argssearch = -f -c":set hls" -c"/$SEARCH/" +$LINENUM $FILE
+
+[extensions]
+# uncomment these lines to enable some popular extensions
+# (see 'hg help extensions' for more info)
+#
+# On the NAS:
+#bitbucketize? https://bitbucket.org/Mekk/mercurial-bitbucketize
+#hgactivity https://labs.freehackers.org/projects/hgactivity/wiki
+
+#churn=
+color=
+histedit=
+hggit=
+fetch=
+#mergeutil? https://www.mercurial-scm.org/wiki/MergeUtilExtension
+#pager=
+purge=
+#rebase=
+shelve=
+# If I decide to version-control Office docs:
+#hgext.zipdoc - https://www.mercurial-scm.org/wiki/ZipdocExtension
