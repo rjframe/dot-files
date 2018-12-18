@@ -9,8 +9,9 @@
 "    endif
 "endif
 
-if g:env =~ 'WINDOWS'
-    if executable('bash')
-        set shell=bash
-    endif
-endif
+" With WSL this would change what vim (often) sees as home.
+"if g:env =~ 'WINDOWS'
+"    if executable('bash')
+"        set shell=bash
+"    endif
+"endif
