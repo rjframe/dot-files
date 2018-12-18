@@ -9,3 +9,6 @@ setlocal suffixesadd=.d
 " TODO: cross-platform path.
 setlocal path+=c:\d\dmd2\src\phobos,c:\d\dmd2\src\druntime\src,
 
+" Add common attributes.
+inoreabbrev sp @safe pure
+inoreabbrev gsp @nogc @safe pure
