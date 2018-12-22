@@ -95,3 +95,7 @@ set nostartofline " Keep the cursor's column position.
 
 " Mappings
 nnoremap <F2> :UndotreeToggle<cr>
+
+xnoremap <silent> in :<c-u>call SelectInNumber()<cr>
+onoremap <silent> in :<c-u>call SelectInNumber()<cr>
+
