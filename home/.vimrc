@@ -50,7 +50,9 @@ set fileformat=unix
 set fileformats=unix,dos
 set encoding=utf-8
 set fileencoding=utf-8
+
 set autoread
+set autowrite
 
 set backspace=indent,eol,start
 set expandtab
@@ -61,10 +63,13 @@ set tabstop=4
 set cpoptions+=n
 
 set noswapfile
-set undodir="~/.vim/undo"
-set undofile
-set undolevels=500
 set history=1000
+
+if has('persistent_undo')
+    set undodir="~/.vim/undo"
+    set undolevels=500
+    set undofile
+endif
 
 " Treat wrapped lines as unwrapped.
 nnoremap j gj
@@ -74,6 +79,7 @@ nnoremap k gk
 set ignorecase
 set smartcase
 set incsearch
+set hlsearch
 
 " Set guide columns.
 set cc=81,121
@@ -81,6 +87,8 @@ set cc=81,121
 set laststatus=2
 set scrolloff=5
 set showmatch
+
+set modelines=0
 
 set nu
 " I want to see 82 characters, regardless of the size of the gutter; this gives 
@@ -92,9 +100,9 @@ au BufRead * let &numberwidth = float2nr(log10(line("$"))) + 4
 
 set nostartofline " Keep the cursor's column position.
 
-
 " Mappings
 nnoremap <F2> :UndotreeToggle<cr>
+inoremap jj <ESC>
 
 xnoremap <silent> in :<c-u>call SelectInNumber()<cr>
 onoremap <silent> in :<c-u>call SelectInNumber()<cr>
