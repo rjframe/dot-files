@@ -6,3 +6,5 @@
 if !exists("g:loaded_matchit")
     runtime macros/matchit.vim
 endif
+
+set matchpairs+=<:>
