@@ -107,3 +107,5 @@ inoremap jj <ESC>
 xnoremap <silent> in :<c-u>call SelectInNumber()<cr>
 onoremap <silent> in :<c-u>call SelectInNumber()<cr>
 
+" Run a "before" folder prior to loading plugins.
+runtime! before/*.vim
