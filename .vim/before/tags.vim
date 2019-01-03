@@ -1,3 +1,5 @@
+" Run this before plugins are loaded.
+
 if !executable('ctags')
     let g:gutentags_dont_load = 1
     finish
