@@ -2,6 +2,11 @@
 let g:loaded_getscriptPlugin = 1
 let g:loaded_rrhelper = 1
 
+" In the plugins folder, this doesn't run in time.
+if !executable('ctags')
+    let g:gutentags_dont_load = 1
+endif
+
 " From romainl - https://gist.github.com/romainl/4df4cde3498fada91032858d7af213c2
 if !exists('g:env')
 	if has('win64') || has('win32') || has('win16')
@@ -109,6 +114,12 @@ inoremap jj <ESC>
 
 xnoremap <silent> in :<c-u>call SelectInNumber()<cr>
 onoremap <silent> in :<c-u>call SelectInNumber()<cr>
+
+" Visual mode - sort comma-separated elements.
+" From https://stackoverflow.com/a/45956320
+xnoremap <leader>ss s<c-r>=join(sort(split(@", '\s*,\s*')), ', ')<cr><esc>
+" The same, with no spaces inserted.
+xnoremap <leader>sns s<c-r>=join(sort(split(@", '\s*,\s*')), ',')<cr><esc>
 
 " Run a "before" folder prior to loading plugins.
 runtime! before/*.vim
