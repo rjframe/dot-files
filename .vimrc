@@ -36,6 +36,9 @@ Plugin 'tpope/vim-eunuch'
 
 Plugin 'previm/previm'
 Plugin 'vimwiki/vimwiki'
+Plugin 'mattn/calendar-vim'
+
+Plugin 'martin-svk/vim-yaml'
 
 call vundle#end()
 
