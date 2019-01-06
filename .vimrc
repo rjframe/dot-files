@@ -2,11 +2,6 @@
 let g:loaded_getscriptPlugin = 1
 let g:loaded_rrhelper = 1
 
-" In the plugins folder, this doesn't run in time.
-if !executable('ctags')
-    let g:gutentags_dont_load = 1
-endif
-
 " From romainl - https://gist.github.com/romainl/4df4cde3498fada91032858d7af213c2
 if !exists('g:env')
 	if has('win64') || has('win32') || has('win16')
