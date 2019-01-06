@@ -31,6 +31,7 @@ Plugin 'junegunn/vim-peekaboo'
 Plugin 'mbbill/undotree'
 " Plugin 'majutsushi/tagbar'
 
+Plugin 'ntpeters/vim-better-whitespace'
 Plugin 'tpope/vim-fugitive'
 Plugin 'junegunn/gv.vim'
 
@@ -41,9 +42,11 @@ Plugin 'tpope/vim-eunuch'
 
 Plugin 'previm/previm'
 Plugin 'vimwiki/vimwiki'
+
 Plugin 'mattn/calendar-vim'
 
 Plugin 'martin-svk/vim-yaml'
+Plugin 'pearofducks/ansible-vim'
 
 call vundle#end()
 
@@ -79,10 +82,6 @@ if has('persistent_undo')
     set undofile
 endif
 
-" Treat wrapped lines as unwrapped.
-nnoremap j gj
-nnoremap k gk
-
 " Search settings
 set ignorecase
 set smartcase
@@ -99,7 +98,7 @@ set showmatch
 set modelines=0
 
 set nu
-" I want to see 82 characters, regardless of the size of the gutter; this gives 
+" I want to see 82 characters, regardless of the size of the gutter; this gives
 " me a 3-char margin on the right, which looks nice, and we won't wrap once the
 " left gutter expands by one.
 " From http://superuser.com/a/330352
@@ -108,15 +107,22 @@ au BufRead * let &numberwidth = float2nr(log10(line("$"))) + 4
 
 set nostartofline " Keep the cursor's column position.
 
-" Mappings
-nnoremap <F2> :UndotreeToggle<cr>
+" = Mappings =
+
+" Treat wrapped lines as unwrapped.
+nnoremap j gj
+nnoremap k gk
+
+" Capitalize the word under the cursor.
+nnoremap <Leader>U viwU
 inoremap jj <ESC>
+
+nnoremap <F2> :UndotreeToggle<cr>
 
 xnoremap <silent> in :<c-u>call SelectInNumber()<cr>
 onoremap <silent> in :<c-u>call SelectInNumber()<cr>
 
-" Visual mode - sort comma-separated elements.
-" From https://stackoverflow.com/a/45956320
+" Sort comma-separated elements. From https://stackoverflow.com/a/45956320
 xnoremap <leader>ss s<c-r>=join(sort(split(@", '\s*,\s*')), ', ')<cr><esc>
 " The same, with no spaces inserted.
 xnoremap <leader>sns s<c-r>=join(sort(split(@", '\s*,\s*')), ',')<cr><esc>
