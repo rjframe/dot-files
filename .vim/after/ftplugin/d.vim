@@ -12,3 +12,7 @@ setlocal path+=c:\d\dmd2\src\phobos,c:\d\dmd2\src\druntime\src,
 " Add common attributes.
 inoreabbrev sp @safe pure
 inoreabbrev gsp @nogc @safe pure
+
+" Comment/uncomment the current line.
+nnoremap <Leader>c I// <ESC>
+nnoremap <Leader>uc ^3x<ESC>
