@@ -11,7 +11,7 @@ if !exists('g:env')
 	endif
 endif
 
-if g:env =~ 'WINDOWS'
+if g:env == 'WINDOWS'
     let &runtimepath="$HOME/.vim,$VIM/vimfiles,$VIMRUNTIME,$VIM/vimfiles/after,$HOME/.vim/after"
 endif
 
@@ -92,17 +92,21 @@ set showmatch
 
 set modelines=0
 
-set nu
-" I want to see 82 characters, regardless of the size of the gutter; this gives
-" me a 3-char margin on the right, which looks nice, and we won't wrap once the
-" left gutter expands by one.
-" From http://superuser.com/a/330352
-au BufEnter * let &numberwidth = float2nr(log10(line("$"))) + 4
-	\| let &columns = &numberwidth + 83
+set numberwidth=4
+set columns=87
+set number
 
 set nostartofline " Keep the cursor's column position.
 
-" = Mappings =
+" Mappings
+
+" Window Management
+set splitright
+
+" Vertical Windows
+nnoremap <Leader>wv :vsplit<CR>10 <C-W>+<CR>
+
+nnoremap <Leader>v :vsplit $MYVIMRC<CR>
 
 " Treat wrapped lines as unwrapped.
 nnoremap j gj
@@ -110,7 +114,7 @@ nnoremap k gk
 
 " Capitalize the word under the cursor.
 nnoremap <Leader>U viwU
-inoremap jj <ESC>
+inoremap jk <ESC>
 
 nnoremap <F2> :UndotreeToggle<cr>
 
