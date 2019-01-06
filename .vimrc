@@ -97,7 +97,7 @@ set nu
 " me a 3-char margin on the right, which looks nice, and we won't wrap once the
 " left gutter expands by one.
 " From http://superuser.com/a/330352
-au BufRead * let &numberwidth = float2nr(log10(line("$"))) + 4
+au BufEnter * let &numberwidth = float2nr(log10(line("$"))) + 4
 	\| let &columns = &numberwidth + 83
 
 set nostartofline " Keep the cursor's column position.
