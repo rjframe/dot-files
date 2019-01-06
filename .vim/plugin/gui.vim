@@ -12,16 +12,12 @@ elseif has("gui_win32")
     set renderoptions=type:directx
 endif
 
-" Auto window resize to accomodate splits.
-" Based on https://stackoverflow.com/a/8024859/1991068
+" Horizontal code resize comes from https://stackoverflow.com/a/8024859/1991068
 let s:auto_resize_width = &numberwidth + 83
 let s:auto_resize_height = &lines -2
-function! s:AutoResize()
-    " On the first split, grab the current window position.
-    if winnr('$') > 1
-        let s:vimpos_xy = getwinpos()
-    endif
+let s:vimpos_xy = getwinpos()
 
+function! s:AutoResize()
     let win_width = winwidth(winnr())
     if win_width < s:auto_resize_width
         let &columns += s:auto_resize_width
@@ -44,6 +40,9 @@ endfunction
 
 augroup AutoResize
     autocmd!
+    " On the first split, grab the current window position.
+    autocmd WinNew * if winnr('$') == 2 | let s:vimpos_xy = getwinpos() | endif
+
     autocmd WinEnter * call <sid>AutoResize()
 augroup END
 
