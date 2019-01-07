@@ -19,4 +19,4 @@ nnoremap <Leader>uc ^3x<ESC>
 inoreabbrev sp @safe pure
 inoreabbrev gsp @nogc @safe pure
 
-inoreabbrev un{ unittest {<CR><CR>}<Up><Tab>
+inoreabbrev ut unittest {<CR><CR>}<Up><Tab>
