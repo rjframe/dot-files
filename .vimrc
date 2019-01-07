@@ -84,7 +84,7 @@ set incsearch
 set hlsearch
 
 " Set guide columns.
-set cc=81,121
+set colorcolumn=81,121
 
 set laststatus=2
 set scrolloff=5
@@ -96,11 +96,12 @@ set numberwidth=4
 set columns=87
 set number
 
-set nostartofline " Keep the cursor's column position.
+" Keep the cursor's column position.
+set nostartofline
 
 " Mappings
 
-" Window Management
+" Window Management. The auto-size code is in plugin/gui.vim
 set splitright
 
 nnoremap <Leader>v :vsplit $MYVIMRC<CR>
@@ -113,15 +114,15 @@ nnoremap k gk
 nnoremap <Leader>U viwU
 inoremap jk <ESC>
 
-nnoremap <F2> :UndotreeToggle<cr>
+nnoremap <F2> :UndotreeToggle<CR>
 
-xnoremap <silent> in :<c-u>call SelectInNumber()<cr>
-onoremap <silent> in :<c-u>call SelectInNumber()<cr>
+xnoremap <silent> in :<C-u>call SelectInNumber()<CR>
+onoremap <silent> in :<C-u>call SelectInNumber()<CR>
 
 " Sort comma-separated elements. From https://stackoverflow.com/a/45956320
-xnoremap <leader>ss s<c-r>=join(sort(split(@", '\s*,\s*')), ', ')<cr><esc>
+xnoremap <leader>ss s<C-r>=join(sort(split(@", '\s*,\s*')), ', ')<CR><ESc>
 " The same, with no spaces inserted.
-xnoremap <leader>sns s<c-r>=join(sort(split(@", '\s*,\s*')), ',')<cr><esc>
+xnoremap <leader>sns s<C-r>=join(sort(split(@", '\s*,\s*')), ',')<CR><ESc>
 
 " Remove duplicates
 xnoremap  <Leader>q :call Uniq()<CR>
