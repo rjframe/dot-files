@@ -103,6 +103,10 @@ set nostartofline
 
 " Window Management. The auto-size code is in plugin/gui.vim
 set splitright
+nnoremap <C-H> <C-W>h
+nnoremap <C-J> <C-W>j
+nnoremap <C-K> <C-W>k
+nnoremap <C-L> <C-W>l
 
 nnoremap <Leader>v :vsplit $MYVIMRC<CR>
 
