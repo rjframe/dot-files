@@ -103,9 +103,6 @@ set nostartofline " Keep the cursor's column position.
 " Window Management
 set splitright
 
-" Vertical Windows
-nnoremap <Leader>wv :vsplit<CR>10 <C-W>+<CR>
-
 nnoremap <Leader>v :vsplit $MYVIMRC<CR>
 
 " Treat wrapped lines as unwrapped.
