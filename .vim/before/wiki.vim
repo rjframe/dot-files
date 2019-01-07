@@ -15,6 +15,11 @@ let g:vimwiki_list = [
     \    'path': '$HOME/.vim/wiki_files/personal-bus-docs/',
     \    'path_html': '$HOME/.vim/wiki_files/html/personal-bus-docs/',
     \    'auto_export': 1,
+    \},
+    \{
+    \    'path': '$HOME/.vim/wiki_files/lab-notes/',
+    \    'syntax': 'markdown',
+    \    'ext': '.md',
     \}
 \]
 
