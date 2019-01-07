@@ -1,6 +1,4 @@
-" Disable default plugins I'll never use.
-let g:loaded_getscriptPlugin = 1
-let g:loaded_rrhelper = 1
+" == Begin - modify the environment for vim. ==
 
 " From romainl - https://gist.github.com/romainl/4df4cde3498fada91032858d7af213c2
 if !exists('g:env')
@@ -12,10 +10,12 @@ if !exists('g:env')
 endif
 
 if g:env == 'WINDOWS'
+    " Use .vim/ instead of vimfiles/
     let &runtimepath="$HOME/.vim,$VIM/vimfiles,$VIMRUNTIME,$VIM/vimfiles/after,$HOME/.vim/after"
 endif
 
-" Vundle configuration.
+" == End - modify the environment for vim. ==
+
 filetype off
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
@@ -35,7 +35,7 @@ Plugin 'tpope/vim-eunuch'
 " Plugin 'justinmk/vim-dirvish
 " Plugin 'AndrewRadev/splitjoin.vim'
 
-Plugin 'previm/previm'
+" Plugin 'previm/previm'
 Plugin 'vimwiki/vimwiki'
 
 Plugin 'mattn/calendar-vim'
@@ -48,10 +48,10 @@ call vundle#end()
 filetype plugin indent on
 syntax on
 
-" Convenient leader.
 let mapleader=' '
 
-" I default to UNIX line endings, even on Windows. Vim handles them just fine.
+" I default to UNIX line endings, even on Windows. Vim handles them just fine,
+" and I don't care about other editors.
 set fileformat=unix
 set fileformats=unix,dos
 set encoding=utf-8
