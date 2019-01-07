@@ -1,12 +1,12 @@
 " == Begin - modify the environment for vim. ==
 
-" From romainl - https://gist.github.com/romainl/4df4cde3498fada91032858d7af213c2
+" From romainl: https://gist.github.com/romainl/4df4cde3498fada91032858d7af213c2
 if !exists('g:env')
-	if has('win64') || has('win32') || has('win16')
-		let g:env = 'WINDOWS'
-	else
-		let g:env = toupper(substitute(system('uname'), '\n', '', ''))
-	endif
+    if has('win64') || has('win32') || has('win16')
+        let g:env = 'WINDOWS'
+    else
+        let g:env = toupper(substitute(system('uname'), '\n', '', ''))
+    endif
 endif
 
 if g:env == 'WINDOWS'
