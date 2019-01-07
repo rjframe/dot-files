@@ -126,5 +126,9 @@ xnoremap <leader>ss s<c-r>=join(sort(split(@", '\s*,\s*')), ', ')<cr><esc>
 " The same, with no spaces inserted.
 xnoremap <leader>sns s<c-r>=join(sort(split(@", '\s*,\s*')), ',')<cr><esc>
 
+" Remove duplicates
+xnoremap  <Leader>q :call Uniq()<CR>
+xnoremap  <Leader>Q :call Uniq('ignore whitespace')<CR>
+
 " Run a "before" folder prior to loading plugins.
 runtime! before/*.vim
