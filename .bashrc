@@ -98,6 +98,20 @@ mcd() {
 	mkdir "${1}" && cd "${1}"
 }
 
+# cd to the ancestral directory of the given name (non-greedily).
+# Ex: if PWD is ~/src/myproject/source/myproject/mymodule, then "goto myproject"
+#    will cd to ~/src/myproject/source/myproject.
+#    "goto myproject" again will cd to ~/src/myproject.
+cto() {
+    if [[ "$(pwd)" =~ ${1}$ ]]; then
+        cd ../
+        cto "${1}"
+    else
+        P="$(pwd)"
+        cd "${P%${1}*}/${1}"
+    fi
+}
+
 ### END Functions ###
 
 if command -v fortune 1>/dev/null;  then
