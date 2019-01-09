@@ -98,6 +98,15 @@ mcd() {
 	mkdir "${1}" && cd "${1}"
 }
 
+# cd up the specified number of directories.
+up() {
+    i="${1}"
+    while [[ "$i" -gt 0 ]]; do
+        cd ..
+        i=$(($i-1))
+    done
+}
+
 # cd to the ancestral directory of the given name (non-greedily).
 # Ex: if PWD is ~/src/myproject/source/myproject/mymodule, then "goto myproject"
 #    will cd to ~/src/myproject/source/myproject.
