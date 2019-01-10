@@ -9,6 +9,13 @@ alias grep='grep --color=auto'
 alias fgrep='fgrep --color=auto'
 alias egrep='egrep --color=auto'
 
+alias psg='ps -A | grep'
+
+alias make='clear && make'
+
+alias df='df -h'
+alias du='du -h'
+
 # CentOS doesn't have tree.
 if ! command -v tree; then
     alias tree="find . -print | sed -e 's;[^/]*/;|____;g;s;____|; |;g'"
@@ -30,3 +37,5 @@ alias play=ansible-playbook
 
 # Recursively remove .DS_Store files (from macOS).
 alias dsrm="find . -name '.DS_Store' -type f -ls -delete"
+
+alias listeners='sudo lsof -iTCP -sTCP:LISTEN -P'
