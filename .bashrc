@@ -121,6 +121,41 @@ cto() {
     fi
 }
 
+# Search for packages when I'm certain I somewhat know the name.
+showp() {
+    if command -v apt-cache; then
+        apt-cache search ^$1
+    elif command -v yum; then
+        yum list $1\*
+    elif command -v dnf; then
+        yum list $1\*
+    elif command -v pacman; then
+        pacman -Ss '^vim'
+    fi
+}
+
+# From https://github.com/rkirti/bashrc/blob/24fed1997a93da96ab402f68ed0bda9412e0dd10/.shells/functions#L25
+function extract() {
+    if [ ! -f $1 ]; then
+        echo "'$1' is not a valid file"
+        return
+    fi
+
+    case $1 in
+        *.tar.bz2)  tar xjf $1;;
+        *.tar.gz)   tar xzf $1;;
+        *.bz2)      bunzip2 $1;;
+        *.rar)      rar x $1;;
+        *.gz)       gunzip $1;;
+        *.tar)      tar xf $1;;
+        *.tbz2)     tar xjf $1;;
+        *.tgz)      tar xzf $1;;
+        *.zip)      unzip $1;;
+        *.Z)        uncompress $1;;
+        *)          echo "'$1' cannot be extracted via extract()";;
+    esac
+}
+
 ### END Functions ###
 
 if command -v fortune 1>/dev/null;  then
