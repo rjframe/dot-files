@@ -1,19 +1,19 @@
 # This is Git's per-user configuration file.
 [user]
-	name = Ryan Frame
-	email = code@ryanjframe.com
+    name = Ryan Frame
+    email = code@ryanjframe.com
 [core]
-	eol = lf
-	autocrlf = false
+    eol = lf
+    autocrlf = false
     excludesfile = ~/.gitignore
     editor = vim
 [alias]
-# Checkout a commit via git pr [num]
-# From Seb (seb@wilzba.ch)
-    pr  = "!f() { git fetch -fu ${2:-upstream} refs/pull/$1/head:pr/$1 && git checkout pr/$1; }; f"
-
+    amend = commit --amend
+    cp = cherry-pick
+    dc = diff --cached
     lola = log --graph --decorate --pretty=oneline --abbrev-commit --all
+    undo = reset HEAD~
 [grep]
     lineNumber = true
 [credential]
-	helper = wincred
+    helper = wincred
