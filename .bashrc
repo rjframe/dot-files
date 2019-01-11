@@ -78,8 +78,8 @@ if ! shopt -oq posix; then
   fi
 fi
 
-if [ -f $HOME/bash_aliases ]; then
-    . $HOME/bash_aliases
+if [ -f $HOME/.bash_aliases ]; then
+    . $HOME/.bash_aliases
 fi
 
 export EDITOR=vim
