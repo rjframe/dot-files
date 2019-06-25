@@ -14,9 +14,13 @@ nnoremap <Leader>c I// <ESC>
 nnoremap <Leader>uc ^3x<ESC>
 
 " == Snippets ==
+" TODO: If I use many, start using a snippet manager instead.
 
 " Add common attributes.
 inoreabbrev sp @safe pure
 inoreabbrev gsp @nogc @safe pure
 
-inoreabbrev ut unittest {<CR><CR>}<Up><Tab>
+" use: ut<Tab>
+inoreabbrev ut unittest {<CR><CR>}<Up>
+" use: utt"
+inoreabbrev utt @(")<CR>unittest {<CR><Tab><CR>}<Up><Up><Up><Right>
