@@ -158,6 +158,11 @@ function extract() {
 
 ### END Functions ###
 
+if [ -f $HOME/.asdf/asdf.sh ]; then
+    . $HOME/.asdf/asdf.sh
+    . $HOME/.asdf/completions/asdf.bash
+fi
+
 if command -v fortune 1>/dev/null;  then
 	fortune -e
 fi
