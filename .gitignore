@@ -5,3 +5,4 @@
 *.dll
 *.swo
 *.swp
+.vim/bundle/*

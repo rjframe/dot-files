@@ -33,7 +33,7 @@ if ! command -v gvim; then
     alias gvim=vim
 fi
 
-alias play=ansible-playbook
+alias play="ansible-playbook --ask-become-pass -i production_inventory.yml"
 
 # Recursively remove .DS_Store files (from macOS).
 alias dsrm="find . -name '.DS_Store' -type f -ls -delete"

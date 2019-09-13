@@ -125,6 +125,10 @@ onoremap <silent> in :<C-u>call SelectInNumber()<CR>
 
 " Sort comma-separated elements. From https://stackoverflow.com/a/45956320
 xnoremap <leader>ss s<C-r>=join(sort(split(@", '\s*,\s*')), ', ')<CR><ESc>
+
+" I almost always want g; to mean 2g;
+nnoremap g; 2g;
+
 " The same, with no spaces inserted.
 xnoremap <leader>sns s<C-r>=join(sort(split(@", '\s*,\s*')), ',')<CR><ESc>
 
