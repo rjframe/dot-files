@@ -85,11 +85,10 @@ fi
 export EDITOR=vim
 export MANPAGER='less -X'
 
-# This loads DVM into a shell session.
-#if [ -f $HOME/dvm/scripts/dvm ]; then
-#	. $HOME/dvm/scripts/dvm
-#fi
-
+# Load work/personal/whatever-specific configs based on username
+if [ -d $HOME/.bashrc_$(whoami) ]; then
+    . $HOME/.bashrc_$(whoami)
+fi
 
 ### BEGIN Functions ###
 
