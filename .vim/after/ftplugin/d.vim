@@ -23,4 +23,4 @@ inoreabbrev gsp @nogc @safe pure
 " use: ut<Tab>
 inoreabbrev ut unittest {<CR><CR>}<Up>
 " use: utt"
-inoreabbrev utt @(")<CR>unittest {<CR><Tab><CR>}<Up><Up><Up><Right>
+inoreabbrev utt @(")<CR>unittest {<CR><CR>}<Up><Up><Up><Right>
