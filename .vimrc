@@ -40,8 +40,13 @@ Plugin 'vimwiki/vimwiki'
 
 Plugin 'mattn/calendar-vim'
 
+Plugin 'vim-syntastic/syntastic'
+Plugin 'luochen1990/rainbow'
+let g:rainbow_active = 1
 Plugin 'martin-svk/vim-yaml'
 Plugin 'pearofducks/ansible-vim'
+" Plugin 'jakwings/vim-pony'
+" Plugin 'elixir-editors/vim-elixir'
 
 call vundle#end()
 
@@ -66,7 +71,9 @@ set smarttab
 set smartindent
 set shiftwidth=4
 set tabstop=4
-set cpoptions+=n
+"set cpoptions+=n
+set clipboard^=unnamed,unnamedplus
+set switchbuf=useopen,vsplit " Experiment.
 
 set noswapfile
 set history=1000
@@ -82,6 +89,7 @@ set ignorecase
 set smartcase
 set incsearch
 set hlsearch
+set cursorline
 
 " Set guide columns.
 set colorcolumn=81,121
@@ -116,21 +124,17 @@ nnoremap k gk
 
 " Capitalize the word under the cursor.
 nnoremap <Leader>U viwU
-inoremap jk <ESC>
+nnoremap <ESC> :nohlsearch<CR>
 
 nnoremap <F2> :UndotreeToggle<CR>
 
-xnoremap <silent> in :<C-u>call SelectInNumber()<CR>
-onoremap <silent> in :<C-u>call SelectInNumber()<CR>
+xnoremap <silent> in :<C-U>call SelectInNumber()<CR>
+onoremap <silent> in :<C-U>call SelectInNumber()<CR>
 
 " Sort comma-separated elements. From https://stackoverflow.com/a/45956320
-xnoremap <leader>ss s<C-r>=join(sort(split(@", '\s*,\s*')), ', ')<CR><ESc>
-
-" I almost always want g; to mean 2g;
-nnoremap g; 2g;
-
+xnoremap <Leader>ss s<C-R>=join(sort(split(@", '\s*,\s*')), ', ')<CR><ESC>
 " The same, with no spaces inserted.
-xnoremap <leader>sns s<C-r>=join(sort(split(@", '\s*,\s*')), ',')<CR><ESc>
+xnoremap <Leader>sns s<C-R>=join(sort(split(@", '\s*,\s*')), ',')<CR><ESC>
 
 " Remove duplicates
 xnoremap  <Leader>q :call Uniq()<CR>

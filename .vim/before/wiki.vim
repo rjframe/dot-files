@@ -3,6 +3,8 @@ let g:vimwiki_list = [
     \    'path': '$HOME/.vim/wiki_files/main/',
     \    'auto_toc': 1,
     \    'path_html': '$HOME/.vim/wiki_files/html/main/',
+    \    'syntax': 'markdown',
+    \    'ext': '.md',
     \},
     \{
     \    'path': '$HOME/.vim/wiki_files/reading/',
