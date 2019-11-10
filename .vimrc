@@ -47,6 +47,7 @@ Plugin 'martin-svk/vim-yaml'
 Plugin 'pearofducks/ansible-vim'
 " Plugin 'jakwings/vim-pony'
 " Plugin 'elixir-editors/vim-elixir'
+" Plugin 'michaeljsmith/vim-indent-object'
 
 call vundle#end()
 
@@ -123,7 +124,7 @@ nnoremap j gj
 nnoremap k gk
 
 " Capitalize the word under the cursor.
-nnoremap <Leader>U viwU
+nnoremap <Leader>u viwUe
 nnoremap <ESC> :nohlsearch<CR>
 
 nnoremap <F2> :UndotreeToggle<CR>
