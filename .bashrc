@@ -85,9 +85,9 @@ fi
 export EDITOR=vim
 export MANPAGER='less -X'
 
-# Load work/personal/whatever-specific configs based on username
-if [ -d $HOME/.bashrc_$(whoami) ]; then
-    . $HOME/.bashrc_$(whoami)
+# Load work/personal/whatever-specific configs based on hostname
+if [ -d $HOME/.bashrc_$(hostname) ]; then
+    . $HOME/.bashrc_$(hostname)
 fi
 
 ### BEGIN Functions ###
