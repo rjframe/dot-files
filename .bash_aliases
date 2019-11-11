@@ -1,13 +1,18 @@
-# Better commands.
+if [ "$(cat /proc/$$/comm)" = 'zsh' ]; then
+    GLOBAL="-g"
+else
+    GLOBAL=""
+fi
+
 alias mv='mv -v'
 
 alias ls='ls -lph --color=auto'
 alias la='ls -A'
 alias l='ls -CF'
 
-alias grep='grep --color=auto'
-alias fgrep='fgrep --color=auto'
-alias egrep='egrep --color=auto'
+alias $GLOBAL grep='grep --color=auto'
+alias $GLOBAL fgrep='fgrep --color=auto'
+alias $GLOBAL egrep='egrep --color=auto'
 
 alias psg='ps -A | grep'
 
@@ -24,7 +29,7 @@ fi
 if command -v notify-send; then
     # Add an "alert" alias for long running commands.
     # Ex: sleep 3; alert
-    alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'
+    alias $GLOBAL alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'
 fi
 
 alias svim='sudo vim'
@@ -38,4 +43,6 @@ alias play="ansible-playbook --ask-become-pass -i production_inventory.yml"
 # Recursively remove .DS_Store files (from macOS).
 alias dsrm="find . -name '.DS_Store' -type f -ls -delete"
 
-alias listeners='sudo lsof -iTCP -sTCP:LISTEN -P'
+if command -v lsof; then
+    alias listeners='sudo lsof -iTCP -sTCP:LISTEN -P'
+fi
