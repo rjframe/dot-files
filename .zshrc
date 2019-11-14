@@ -4,7 +4,7 @@ setopt HIST_IGNORE_ALL_DUPS
 setopt NO_CASE_GLOB
 
 # Vi mode
-bindkey -v
+#bindkey -v
 
 # Keep 1000 lines of history within the shell and save it to ~/.zsh_history:
 HISTSIZE=1000
@@ -15,12 +15,19 @@ if [ -f $HOME/.common_rc ]; then
     . $HOME/.common_rc
 fi
 
-#### Unexamined Ubuntu default config below:
+if [[ ! -d ~/.zplug ]]; then
+    curl -sL --proto-redir -all,https https://raw.githubusercontent.com/zplug/installer/master/installer.zsh | zsh
+fi
 
-# Set up the prompt
-autoload -Uz promptinit
-promptinit
-prompt adam1
+# zplug requires a non-mawk awk (Debian default); apt install gawk
+source ~/.zplug/init.zsh
+zplug "zplug/zplug", hook-build:'zplug --self-manage'
+
+zplug "martinrotter/powerless", from:github, as:theme
+source ~/.zplug/repos/martinrotter/powerless/powerless.zsh false
+#source ~/.zplug/repos/martinrotter/powerless/utilities.zsh enable
+
+#### Unexamined Ubuntu default config below:
 
 # Use modern completion system
 autoload -Uz compinit
@@ -43,3 +50,12 @@ zstyle ':completion:*' verbose true
 
 zstyle ':completion:*:*:kill:*:processes' list-colors '=(#b) #([0-9]#)*=0=01;31'
 zstyle ':completion:*:kill:*' command 'ps -u $USER -o pid,%cpu,tty,cputime,cmd'
+# The following lines were added by compinstall
+zstyle :compinstall filename '/home/rjframe/.zshrc'
+
+# End default config.
+
+zstyle ':completion:*' rehash true
+
+zplug "zsh-users/zsh-syntax-highlighting", defer:2
+source ~/.zplug/repos/zsh-users/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
