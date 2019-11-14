@@ -19,7 +19,11 @@ if [[ ! -d ~/.zplug ]]; then
     curl -sL --proto-redir -all,https https://raw.githubusercontent.com/zplug/installer/master/installer.zsh | zsh
 fi
 
-# zplug requires a non-mawk awk (Debian default); apt install gawk
+# WSL seems to have permissions issues...
+if grep -q Microsoft /proc/version; then
+    compaudit | xargs chmod g-o
+fi
+
 source ~/.zplug/init.zsh
 zplug "zplug/zplug", hook-build:'zplug --self-manage'
 
@@ -53,7 +57,7 @@ zstyle ':completion:*:kill:*' command 'ps -u $USER -o pid,%cpu,tty,cputime,cmd'
 # The following lines were added by compinstall
 zstyle :compinstall filename '/home/rjframe/.zshrc'
 
-# End default config.
+#### End default config.
 
 zstyle ':completion:*' rehash true
 
