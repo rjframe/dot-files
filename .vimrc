@@ -39,6 +39,7 @@ Plugin 'tpope/vim-eunuch'
 Plugin 'vimwiki/vimwiki'
 
 Plugin 'mattn/calendar-vim'
+Plugin 'tmux-plugins/vim-tmux'
 
 Plugin 'vim-syntastic/syntastic'
 Plugin 'luochen1990/rainbow'

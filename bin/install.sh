@@ -24,3 +24,14 @@ ln -s "$BASE/.vimrc" "$HOME/.vimrc"
 
 ln -s "$BASE/.gitconfig" "$HOME/.gitconfig"
 ln -s "$BASE/.gitconfig" "$HOME/.gitignore"
+
+ln -s "$BASE/.tmux.conf" "$HOME/.tmux.conf"
+
+if [ ! -d "$HOME/.tmux" ]; then
+    git clone https://github.com/tmux-plugins/tpm "$HOME/.tmux/plugins/tpm"
+fi
+
+sudo apt update && sudo apt install python3-tmuxp
+
+ln -sr "$BASE/.tmux" "$HOME/.tmux"
+
