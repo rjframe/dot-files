@@ -37,7 +37,7 @@ showp() {
     elif command -v dnf; then
         yum list $1\*
     elif command -v pacman; then
-        pacman -Ss '^vim'
+        pacman -Ss '^$1'
     fi
 }
 

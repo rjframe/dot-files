@@ -21,12 +21,15 @@ alias make='clear && make'
 alias df='df -h'
 alias du='du -h'
 
+# Pipe text to this
+alias rot13="tr 'A-Za-z' 'N-ZA-Mn-za-m'"
+
 # CentOS doesn't have tree.
-if ! command -v tree; then
+if ! command -v tree >/dev/null; then
     alias tree="find . -print | sed -e 's;[^/]*/;|____;g;s;____|; |;g'"
 fi
 
-if command -v notify-send; then
+if command -v notify-send >/dev/null; then
     # Add an "alert" alias for long running commands.
     # Ex: sleep 3; alert
     alias $GLOBAL alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'
