@@ -94,7 +94,7 @@ set cursorline
 
 " Set guide columns.
 set colorcolumn=81,121
-
+set noshowmode
 set laststatus=2
 set scrolloff=5
 set showmatch
