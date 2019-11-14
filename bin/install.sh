@@ -2,6 +2,14 @@
 
 # Run this from the dot-files directory.
 
+# tmux: tmuxp
+# zplug: python gawk
+sudo apt update && sudo apt install python3-tmuxp python gawk
+
+# Stuff I always want
+sudo apt install ansible curl rsync ssh tmux vim zsh
+
+
 BASE=`pwd`
 
 ln -s "$BASE/.bashrc" "$HOME/.bashrc"
@@ -31,7 +39,6 @@ if [ ! -d "$HOME/.tmux" ]; then
     git clone https://github.com/tmux-plugins/tpm "$HOME/.tmux/plugins/tpm"
 fi
 
-sudo apt update && sudo apt install python3-tmuxp
 
 ln -sr "$BASE/.tmux" "$HOME/.tmux"
 
