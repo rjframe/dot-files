@@ -10,6 +10,9 @@ alias ls='ls -lph --color=auto'
 alias la='ls -A'
 alias l='ls -CF'
 
+# Usage: 'recent 5', etc.
+alias recent='ls -1t | tail -n +2 | head -n'
+
 alias $GLOBAL grep='grep --color=auto'
 alias $GLOBAL fgrep='fgrep --color=auto'
 alias $GLOBAL egrep='egrep --color=auto'
