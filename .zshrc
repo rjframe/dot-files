@@ -3,6 +3,9 @@ setopt CORRECT_ALL
 setopt HIST_IGNORE_ALL_DUPS
 setopt NO_CASE_GLOB
 
+# block cursor
+echo -en "\e[=2c"
+
 # Vi mode
 #bindkey -v
 
