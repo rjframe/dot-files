@@ -41,7 +41,7 @@ Plugin 'vimwiki/vimwiki'
 Plugin 'mattn/calendar-vim'
 Plugin 'tmux-plugins/vim-tmux'
 
-Plugin 'vim-syntastic/syntastic'
+"Plugin 'vim-syntastic/syntastic'
 Plugin 'luochen1990/rainbow'
 let g:rainbow_active = 1
 Plugin 'martin-svk/vim-yaml'
