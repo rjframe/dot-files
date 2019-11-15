@@ -30,6 +30,8 @@ ln -s "$BASE/.common_rc" "$HOME/.common_rc"
 ln -sr "$BASE/.vim" "$HOME/.vim"
 ln -s "$BASE/.vimrc" "$HOME/.vimrc"
 
+vim +PluginInstall +qall
+
 ln -s "$BASE/.gitconfig" "$HOME/.gitconfig"
 ln -s "$BASE/.gitconfig" "$HOME/.gitignore"
 
@@ -39,6 +41,4 @@ if [ ! -d "$HOME/.tmux" ]; then
     git clone https://github.com/tmux-plugins/tpm "$HOME/.tmux/plugins/tpm"
 fi
 
-
 ln -sr "$BASE/.tmux" "$HOME/.tmux"
-
