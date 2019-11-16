@@ -1,17 +1,14 @@
 #!/bin/sh
 
 # Run this from the dot-files directory.
-# TODO: Both install scripts should source a common one to remove duplication.
 
 # tmux: tmuxp
 # zplug: python gawk
-sudo apt update && sudo apt install python3-tmuxp python gawk
-
-# Stuff I always want
-sudo apt install ansible curl rsync ssh tmux vim zsh
-
+sudo apt update && sudo apt install tmux python3-tmuxp python gawk
 
 BASE=`pwd`
+
+touch "$HOME/.remoteprofile"
 
 ln -s "$BASE/.bashrc" "$HOME/.bashrc"
 ln -s "$BASE/.bash_aliases" "$HOME/.bash_aliases"
