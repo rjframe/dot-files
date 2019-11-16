@@ -14,6 +14,11 @@ if g:env == 'WINDOWS'
     let &runtimepath="$HOME/.vim,$VIM/vimfiles,$VIMRUNTIME,$VIM/vimfiles/after,$HOME/.vim/after"
 endif
 
+if filereadable('$HOME/.remoteprofile')
+    let g:isremoteprofile = 1
+else
+    let g:isremoteprofile = 0
+endif
 " == End - modify the environment for vim. ==
 
 filetype off
@@ -27,28 +32,35 @@ Plugin 'mbbill/undotree'
 " Plugin 'majutsushi/tagbar'
 
 Plugin 'ntpeters/vim-better-whitespace'
-Plugin 'tpope/vim-fugitive'
-Plugin 'junegunn/gv.vim'
 
-Plugin 'ludovicchabant/vim-gutentags'
-Plugin 'tpope/vim-eunuch'
+if ! g:isremoteprofile
+    Plugin 'tpope/vim-fugitive'
+    Plugin 'junegunn/gv.vim'
+    Plugin 'ludovicchabant/vim-gutentags'
+    "Plugin 'vim-syntastic/syntastic'
+
+    " Plugin 'previm/previm'
+    Plugin 'vimwiki/vimwiki'
+
+    Plugin 'martin-svk/vim-yaml'
+    Plugin 'pearofducks/ansible-vim'
+    " Plugin 'jakwings/vim-pony'
+    " Plugin 'elixir-editors/vim-elixir'
+    " Plugin 'michaeljsmith/vim-indent-object'
+endif
+
+if g:env != 'WINDOWS'
+    Plugin 'tpope/vim-eunuch'
+endif
+
 " Plugin 'justinmk/vim-dirvish
 " Plugin 'AndrewRadev/splitjoin.vim'
-
-" Plugin 'previm/previm'
-Plugin 'vimwiki/vimwiki'
 
 Plugin 'mattn/calendar-vim'
 Plugin 'tmux-plugins/vim-tmux'
 
-"Plugin 'vim-syntastic/syntastic'
 Plugin 'luochen1990/rainbow'
 let g:rainbow_active = 1
-Plugin 'martin-svk/vim-yaml'
-Plugin 'pearofducks/ansible-vim'
-" Plugin 'jakwings/vim-pony'
-" Plugin 'elixir-editors/vim-elixir'
-" Plugin 'michaeljsmith/vim-indent-object'
 
 call vundle#end()
 
