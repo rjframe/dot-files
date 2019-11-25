@@ -27,7 +27,7 @@ source ~/.zplug/init.zsh
 # WSL seems to have permissions issues...
 if grep -q Microsoft /proc/version; then
     # TODO: Error if compaudit has no problems; need to check retcode/output.
-    compaudit | xargs chmod g-o
+    compaudit | xargs -r chmod g-o
 fi
 
 zplug "zplug/zplug", hook-build:'zplug --self-manage'
