@@ -14,6 +14,10 @@ HISTSIZE=1000
 SAVEHIST=2000
 HISTFILE=~/.zsh_history
 
+# Use modern completion system
+autoload -Uz compinit
+compinit
+
 if [ -f $HOME/.common_rc ]; then
     . $HOME/.common_rc
 fi
@@ -38,9 +42,6 @@ source ~/.zplug/repos/martinrotter/powerless/powerless.zsh false
 
 #### Unexamined Ubuntu default config below:
 
-# Use modern completion system
-autoload -Uz compinit
-compinit
 
 zstyle ':completion:*' auto-description 'specify: %d'
 zstyle ':completion:*' completer _expand _complete _correct _approximate
