@@ -3,17 +3,17 @@ CUR_SHELL="$(cat /proc/$$/comm)"
 export EDITOR=vim
 export MANPAGER='less -X'
 
-if [ -f $HOME/.bash_aliases ]; then
-    . $HOME/.bash_aliases
+if [ -f $HOME/.config/shells/bash_aliases ]; then
+    . $HOME/.config/shells/bash_aliases
 fi
 
-if [ -f $HOME/.shell_functions ]; then
-    . $HOME/.shell_functions
+if [ -f $HOME/.config/shells/shell_functions ]; then
+    . $HOME/.config/shells/shell_functions
 fi
 
 # Load work/personal/whatever-specific configs based on hostname
-if [ -f "$HOME/.$CUR_SHELL""rc_$(hostname)" ]; then
-    . "$HOME/.$CUR_SHELL""rc$(hostname)"
+if [ -f "$HOME/.config/shells/$CUR_SHELL""rc_$(hostname)" ]; then
+    . "$HOME/.config/shells/$CUR_SHELL""rc_$(hostname)"
 fi
 
 if [ -f $HOME/.asdf/asdf.sh ]; then

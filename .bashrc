@@ -78,6 +78,6 @@ if ! shopt -oq posix; then
   fi
 fi
 
-if [ -f $HOME/.common_rc ]; then
-    . $HOME/.common_rc
+if [ -f $HOME/.config/shells/common_rc ]; then
+    . $HOME/.config/shells/common_rc
 fi
