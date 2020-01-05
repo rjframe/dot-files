@@ -89,6 +89,9 @@ set tabstop=4
 set clipboard^=unnamed,unnamedplus
 set switchbuf=useopen,vsplit " Experiment.
 
+set list
+set listchars=tab:⍿·,trail:×
+
 set noswapfile
 set history=1000
 
