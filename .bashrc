@@ -3,10 +3,7 @@
 # for examples.
 
 # If not running interactively, don't do anything.
-case $- in
-    *i*) ;;
-      *) return;;
-esac
+[[ $- != *i* ]] && return
 
 # Don't put duplicate lines or lines starting with space in the history.
 HISTCONTROL=ignoreboth
