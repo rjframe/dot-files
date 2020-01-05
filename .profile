@@ -13,3 +13,6 @@ if [ -n "$BASH_VERSION" ]; then
 fi
 
 PATH="$HOME/bin:$HOME/.local/bin:/sbin:/usr/sbin:$PATH"
+
+# opam configuration
+test -r /home/rjframe/.opam/opam-init/init.sh && . /home/rjframe/.opam/opam-init/init.sh > /dev/null 2> /dev/null || true
