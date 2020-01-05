@@ -5,6 +5,7 @@
 *.dll
 *.swo
 *.swp
+.vim/.netrwhist
 .vim/bundle/*
 .config/shells/.zcompdump
 .config/shells/.zsh_history
