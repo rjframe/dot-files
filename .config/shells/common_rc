@@ -21,6 +21,8 @@ if [ -f $HOME/.asdf/asdf.sh ]; then
     . $HOME/.asdf/completions/asdf.bash
 fi
 
+test -r /home/rjframe/.opam/opam-init/init.sh && . /home/rjframe/.opam/opam-init/init.sh > /dev/null 2> /dev/null || true
+
 if command -v fortune 1>/dev/null;  then
 	fortune -e
 fi

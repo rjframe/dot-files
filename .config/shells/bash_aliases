@@ -52,3 +52,6 @@ alias dsrm="find . -name '.DS_Store' -type f -ls -delete"
 if command -v lsof; then
     alias listeners='sudo lsof -iTCP -sTCP:LISTEN -P'
 fi
+
+# "jfb" is hard to remember.
+alias pdf=jfbview
