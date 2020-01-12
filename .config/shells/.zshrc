@@ -1,13 +1,29 @@
 setopt APPEND_HISTORY
-setopt CORRECT_ALL
+#setopt CORRECT_ALL
 setopt HIST_IGNORE_ALL_DUPS
 setopt NO_CASE_GLOB
+setopt COMPLETE_ALIASES
 
 # block cursor
 echo -en "\e[=2c"
 
-# Vi mode
-#bindkey -v
+## Vi mode configuration
+bindkey -v
+export KEYTIMEOUT=2
+
+function zle-line-init zle-keymap-select {
+    VIMNORMALMODE="%K{#87af00} %BNormal%b %k"
+    RPS1="${${KEYMAP/vicmd/$VIMNORMALMODE}/(main|viins)/} $EPS1"
+    zle reset-prompt
+}
+
+zle -N zle-line-init
+zle -N zle-keymap-select
+
+bindkey '^w' backward-kill-word
+bindkey '^r' history-incremental-search-backward
+
+## END Vi mode configuration
 
 # Keep 1000 lines of history within the shell and save it to ~/.zsh_history:
 HISTSIZE=1000
@@ -65,7 +81,7 @@ zstyle :compinstall filename '/home/rjframe/.zshrc'
 
 #### End default config.
 
-zstyle ':completion:*' rehash true
+#zstyle ':completion:*' rehash true
 
 zplug "zsh-users/zsh-syntax-highlighting", defer:2
 source ~/.zplug/repos/zsh-users/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
