@@ -44,6 +44,7 @@ if ! g:isremoteprofile
 
     Plugin 'martin-svk/vim-yaml'
     Plugin 'pearofducks/ansible-vim'
+    Plugin 'bigeagle/sieve.vim'
     " Plugin 'jakwings/vim-pony'
     " Plugin 'elixir-editors/vim-elixir'
     " Plugin 'michaeljsmith/vim-indent-object'
