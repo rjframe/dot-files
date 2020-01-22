@@ -48,6 +48,8 @@ if ! g:isremoteprofile
     " Plugin 'jakwings/vim-pony'
     " Plugin 'elixir-editors/vim-elixir'
     " Plugin 'michaeljsmith/vim-indent-object'
+
+    Plugin 'mattn/calendar-vim'
 endif
 
 if g:env != 'WINDOWS'
@@ -57,7 +59,6 @@ endif
 " Plugin 'justinmk/vim-dirvish
 " Plugin 'AndrewRadev/splitjoin.vim'
 
-Plugin 'mattn/calendar-vim'
 Plugin 'tmux-plugins/vim-tmux'
 
 Plugin 'luochen1990/rainbow'
