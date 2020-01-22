@@ -143,7 +143,9 @@ nnoremap k gk
 
 " Capitalize the word under the cursor.
 nnoremap <Leader>u viwUe
-nnoremap <ESC> :nohlsearch<CR>
+" This would start vim in replace mode when opening a file from the terminal.
+" TODO: Why?
+"nnoremap <ESC> :nohlsearch<CR>
 
 nnoremap <F2> :UndotreeToggle<CR>
 
