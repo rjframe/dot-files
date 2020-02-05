@@ -1,7 +1,7 @@
 # Common shell functions
 
 # Create a directory then enter it.
-mcd() {
+mkcd() {
 	mkdir "${1}" && cd "${1}"
 }
 
