@@ -32,8 +32,8 @@ Plugin 'mbbill/undotree'
 " Plugin 'majutsushi/tagbar'
 
 Plugin 'ntpeters/vim-better-whitespace'
-
 if ! g:isremoteprofile
+    Plugin 'tpope/vim-endwise'
     Plugin 'tpope/vim-fugitive'
     Plugin 'junegunn/gv.vim'
     Plugin 'ludovicchabant/vim-gutentags'
@@ -45,6 +45,7 @@ if ! g:isremoteprofile
     Plugin 'martin-svk/vim-yaml'
     Plugin 'pearofducks/ansible-vim'
     Plugin 'bigeagle/sieve.vim'
+    Plugin 'rust-lang/rust.vim'
     " Plugin 'jakwings/vim-pony'
     " Plugin 'elixir-editors/vim-elixir'
     " Plugin 'michaeljsmith/vim-indent-object'
