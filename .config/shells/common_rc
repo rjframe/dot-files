@@ -1,6 +1,7 @@
 CUR_SHELL="$(cat /proc/$$/comm)"
 
 export EDITOR=vim
+export PAGER='less -X'
 export MANPAGER='less -X'
 
 if [ -f $HOME/.config/shells/bash_aliases ]; then
