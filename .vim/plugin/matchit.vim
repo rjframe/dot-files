@@ -7,4 +7,6 @@ if !exists("g:loaded_matchit")
     runtime macros/matchit.vim
 endif
 
-set matchpairs+=<:>
+" TODO: Add this for languages where useful; the showmatch beep on > is
+" annoying.
+"set matchpairs+=<:>
