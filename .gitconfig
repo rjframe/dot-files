@@ -16,4 +16,4 @@
 [grep]
     lineNumber = true
 [credential]
-    helper = wincred
+    helper = store
