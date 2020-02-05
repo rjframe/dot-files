@@ -11,5 +11,3 @@ if [ -n "$BASH_VERSION" ]; then
 	. "$HOME/.bashrc"
     fi
 fi
-
-PATH="$HOME/bin:$HOME/.local/bin:/sbin:/usr/sbin:$PATH"
