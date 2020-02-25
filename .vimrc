@@ -41,6 +41,7 @@ if ! g:isremoteprofile
 
     " Plugin 'previm/previm'
     Plugin 'vimwiki/vimwiki'
+    Plugin 'camspiers/lens.vim'
 
     Plugin 'martin-svk/vim-yaml'
     Plugin 'pearofducks/ansible-vim'
