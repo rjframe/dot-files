@@ -1,7 +1,7 @@
 if !has("gui_running")
-	set t_Co=256
+    set t_Co=256
 
-    " Block cursor on supporting terminals.
+    " Use a block cursor on supporting terminals.
     let &t_ti.="\e[1 q"
     let &t_SI.="\e[5 q"
     let &t_EI.="\e[1 q"
