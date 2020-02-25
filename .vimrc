@@ -29,7 +29,6 @@ Plugin 'VundleVim/Vundle.vim'
 Plugin 'itchyny/lightline.vim'
 Plugin 'junegunn/vim-peekaboo'
 Plugin 'mbbill/undotree'
-" Plugin 'majutsushi/tagbar'
 
 Plugin 'ntpeters/vim-better-whitespace'
 if ! g:isremoteprofile
@@ -37,6 +36,7 @@ if ! g:isremoteprofile
     Plugin 'tpope/vim-fugitive'
     Plugin 'junegunn/gv.vim'
     Plugin 'ludovicchabant/vim-gutentags'
+    Plugin 'majutsushi/tagbar'
     "Plugin 'vim-syntastic/syntastic'
 
     " Plugin 'previm/previm'
@@ -151,6 +151,7 @@ nnoremap <Leader>u viwUe
 "nnoremap <ESC> :nohlsearch<CR>
 
 nnoremap <F2> :UndotreeToggle<CR>
+nnoremap <F8> :TagbarToggle<CR>
 
 xnoremap <silent> in :<C-U>call SelectInNumber()<CR>
 onoremap <silent> in :<C-U>call SelectInNumber()<CR>
