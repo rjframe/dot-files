@@ -56,3 +56,7 @@ fi
 
 # "jfb" is hard to remember.
 alias pdf=jfbview
+
+if [ "$TERM" = 'xterm-kitty' ]; then
+    alias icat='kitty +kitten icat'
+fi

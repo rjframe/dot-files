@@ -78,3 +78,5 @@ fi
 if [ -f $HOME/.config/shells/common_rc ]; then
     . $HOME/.config/shells/common_rc
 fi
+
+source /home/rjframe/.config/broot/launcher/bash/br

@@ -85,3 +85,5 @@ zstyle :compinstall filename '/home/rjframe/.zshrc'
 
 zplug "zsh-users/zsh-syntax-highlighting", defer:2
 source ~/.zplug/repos/zsh-users/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+
+source /home/rjframe/.config/broot/launcher/bash/br

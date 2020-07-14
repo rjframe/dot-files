@@ -74,6 +74,8 @@ syntax on
 
 let mapleader=' '
 
+set textwidth=80
+
 " I default to UNIX line endings, even on Windows. Vim handles them just fine,
 " and I don't care about other editors.
 set fileformat=unix
@@ -114,7 +116,7 @@ set hlsearch
 set cursorline
 
 " Set guide columns.
-set colorcolumn=81,121
+set colorcolumn=81
 set noshowmode
 set laststatus=2
 set scrolloff=5
