@@ -35,6 +35,7 @@ if ! g:isremoteprofile
     Plugin 'tpope/vim-endwise'
     Plugin 'tpope/vim-fugitive'
     Plugin 'junegunn/gv.vim'
+
     Plugin 'ludovicchabant/vim-gutentags'
     Plugin 'majutsushi/tagbar'
     "Plugin 'vim-syntastic/syntastic'
@@ -53,6 +54,11 @@ if ! g:isremoteprofile
     " Plugin 'michaeljsmith/vim-indent-object'
 
     Plugin 'mattn/calendar-vim'
+
+    " Native Vim package
+    " TODO: Need to set custom mappings.
+    "let g:vimspector_enable_mappings = 'HUMAN'
+    packadd! vimspector
 endif
 
 if g:env != 'WINDOWS'
@@ -128,10 +134,14 @@ set numberwidth=4
 set columns=87
 set number
 
+set lazyredraw
+
 " Keep the cursor's column position.
 set nostartofline
 
 " Mappings
+
+nnoremap Q @@
 
 " Window Management. The auto-size code is in plugin/gui.vim
 set splitright
