@@ -89,6 +89,8 @@ set fileformats=unix,dos
 set encoding=utf-8
 set fileencoding=utf-8
 
+set textwidth=80
+
 set autoread
 set autowrite
 
@@ -138,6 +140,10 @@ set lazyredraw
 
 " Keep the cursor's column position.
 set nostartofline
+
+" Unmappings
+
+nnoremap <Del> <Nop>
 
 " Mappings
 

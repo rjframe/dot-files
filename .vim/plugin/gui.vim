@@ -1,4 +1,6 @@
-if !has("gui_running")
+if has("gui_running")
+    colorscheme industry
+else
     set t_Co=256
 
     " Use a block cursor on supporting terminals.

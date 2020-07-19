@@ -14,12 +14,17 @@ let g:vimwiki_list = [
     \    'ext': '.md',
     \},
     \{
-    \    'path': '$HOME/.vim/wiki_files/personal-bus-docs/',
-    \    'path_html': '$HOME/.vim/wiki_files/html/personal-bus-docs/',
-    \    'auto_export': 1,
+    \    'path': '$HOME/.vim/wiki_files/lab-notes/',
+    \    'syntax': 'markdown',
+    \    'ext': '.md',
     \},
     \{
-    \    'path': '$HOME/.vim/wiki_files/lab-notes/',
+    \    'path': '$HOME/.vim/wiki_files/meeting-notes/',
+    \    'syntax': 'markdown',
+    \    'ext': '.md',
+    \},
+    \{
+    \    'path': 'C:\Users\framery\Desktop\Disaster Recovery\',
     \    'syntax': 'markdown',
     \    'ext': '.md',
     \}
