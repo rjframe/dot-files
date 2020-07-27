@@ -8,6 +8,7 @@
 .vim/.netrwhist
 .vim/bundle/*
 .vim/view/*
+.vim/pack/*
 .config/shells/.zcompdump
 .config/shells/.zsh_history
 tags

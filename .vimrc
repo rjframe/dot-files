@@ -43,6 +43,7 @@ if ! g:isremoteprofile
     " Plugin 'previm/previm'
     Plugin 'vimwiki/vimwiki'
     Plugin 'camspiers/lens.vim'
+    Plugin 'ctrlpvim/ctrlp.vim'
 
     Plugin 'martin-svk/vim-yaml'
     Plugin 'pearofducks/ansible-vim'
@@ -122,6 +123,7 @@ set smartcase
 set incsearch
 set hlsearch
 set cursorline
+set wildignore+=*/.git/*,*/tmp/*,*.swp,*.a,*.exe,*.lib
 
 " Set guide columns.
 set colorcolumn=81
@@ -170,6 +172,22 @@ nnoremap <Leader>u viwUe
 
 nnoremap <F2> :UndotreeToggle<CR>
 nnoremap <F8> :TagbarToggle<CR>
+
+" Note taking:
+" Experiment to work without vimwiki. TODO: May need revised to work on Windows.
+" Also see .vim/before/tags.vim for ctags setup.
+" Largely from https://www.edwinwenink.xyz/posts/42-vim_notetaking/
+" Open index page
+nnoremap <Leader>ni :e $HOME/notes/index.md<CR>
+" Create new note
+nnoremap <Leader>nn :execute ":e $HOME/notes/" . strftime("%Y%m%d%H%M%S") . ".md"<CR>
+" If we use this long-term, use ripgrep for OS portability.
+" Also set grepprg.
+let g:ctrlp_user_command = 'grep -r %s'
+let g_ctrlp_user_caching = 0
+nnoremap <Leader>t :CtrlPTag<CR>
+command! -nargs=1 NotesGrep execute 'silent grep! -r -i --include="*.md" "<args>" "$HOME/notes/"' | redraw! | botright vertical cwindow | vertical resize 45
+nnoremap <Leader>ns :NotesGrep
 
 xnoremap <silent> in :<C-U>call SelectInNumber()<CR>
 onoremap <silent> in :<C-U>call SelectInNumber()<CR>
