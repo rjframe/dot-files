@@ -1,5 +1,8 @@
 " Run this before plugins are loaded.
 
+" This is the default, but vim is complaining now if it's not defined.
+let g:tagbar_use_cache = 1
+
 if !executable('ctags')
     let g:gutentags_dont_load = 1
     finish
