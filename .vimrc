@@ -186,8 +186,12 @@ nnoremap <Leader>nn :execute ":e $HOME/notes/" . strftime("%Y%m%d%H%M%S") . ".md
 let g:ctrlp_user_command = 'grep -r %s'
 let g_ctrlp_user_caching = 0
 nnoremap <Leader>t :CtrlPTag<CR>
-command! -nargs=1 NotesGrep execute 'silent grep! -r -i --include="*.md" "<args>" "$HOME/notes/"' | redraw! | botright vertical cwindow | vertical resize 45
+command! -nargs=1 NotesGrep execute 'silent grep! -S "<args>" "$HOME/notes/"' | redraw! | botright vertical cwindow | vertical resize 45
+" command! -nargs=1 NotesGrep execute 'silent grep! -r -i --include="*.md" "<args>" "$HOME/notes/"' | redraw! | botright vertical cwindow | vertical resize 45
 nnoremap <Leader>ns :NotesGrep
+if executable('rga')
+    set grepprg=rga\ --vimgrep
+endif
 
 xnoremap <silent> in :<C-U>call SelectInNumber()<CR>
 onoremap <silent> in :<C-U>call SelectInNumber()<CR>
