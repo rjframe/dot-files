@@ -10,9 +10,9 @@
 sudo apt update && sudo apt install python3-tmuxp python gawk
 
 # Stuff I always want
-sudo apt install ansible curl rsync ssh tmux vim zsh
+sudo apt install ansible curl rsync ssh tmux vim w3m zsh
 
-sudo pacman -S rsync openssh tmux tmuxp gawk vim zsh
+sudo pacman -S rsync openssh tmux tmuxp gawk vim w3m zsh
 
 BASE=`pwd`
 
