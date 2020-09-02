@@ -17,3 +17,5 @@
     lineNumber = true
 [credential]
     helper = store
+[pull]
+	ff = only
