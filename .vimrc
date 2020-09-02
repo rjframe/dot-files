@@ -167,6 +167,16 @@ nnoremap <Leader>u viwUe
 nnoremap <F2> :UndotreeToggle<CR>
 nnoremap <F8> :TagbarToggle<CR>
 
+nnoremap <F5> <Plug>VimspectorContinue
+nnoremap <F6> <Plug>VimspectorStop
+nnoremap <Leader>bl :call vimspector#Launch()<CR>
+nnoremap <Leader>bb <Plug>VimspectorToggleBreakpoint
+nnoremap <Leader>bc <Plug>VimspectorToggleConditionalBreakpoint
+nnoremap <Leader>bf <Plug>VimspectorAddFunctionBreakpoint
+nnoremap <F10> <Plug>VimspectorStepOver
+nnoremap <F11> <Plug>VimspectorStepInto
+nnoremap <F12> <Plug>VimspectorStepOut
+
 " Note taking:
 " Experiment to work without vimwiki. TODO: May need revised to work on Windows.
 " Also see .vim/before/tags.vim for ctags setup.
