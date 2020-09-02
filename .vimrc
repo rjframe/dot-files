@@ -38,9 +38,7 @@ if ! g:isremoteprofile
 
     Plugin 'ludovicchabant/vim-gutentags'
     Plugin 'majutsushi/tagbar'
-    "Plugin 'vim-syntastic/syntastic'
 
-    " Plugin 'previm/previm'
     Plugin 'vimwiki/vimwiki'
     Plugin 'camspiers/lens.vim'
     Plugin 'ctrlpvim/ctrlp.vim'
@@ -50,15 +48,11 @@ if ! g:isremoteprofile
     Plugin 'bigeagle/sieve.vim'
     Plugin 'rust-lang/rust.vim'
     Plugin 'racer-rust/vim-racer'
-    " Plugin 'jakwings/vim-pony'
-    " Plugin 'elixir-editors/vim-elixir'
     " Plugin 'michaeljsmith/vim-indent-object'
 
     Plugin 'mattn/calendar-vim'
 
     " Native Vim package
-    " TODO: Need to set custom mappings.
-    "let g:vimspector_enable_mappings = 'HUMAN'
     packadd! vimspector
 endif
 
