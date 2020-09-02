@@ -184,18 +184,26 @@ nnoremap <F12> <Plug>VimspectorStepOut
 " Open index page
 nnoremap <Leader>ni :e $HOME/notes/index.md<CR>
 " Create new note
-nnoremap <Leader>nn :execute ":e $HOME/notes/" . strftime("%Y%m%d%H%M%S") . ".md"<CR>
-" If we use this long-term, use ripgrep for OS portability.
-" Also set grepprg.
-let g:ctrlp_user_command = 'grep -r %s'
+nnoremap <Leader>nn
+    \ :execute ":e $HOME/notes/" . strftime("%Y%m%d%H%M%S") . ".md"<CR>
+if executable('rg')
+    let g:ctrlp_user_command = 'rg %s --files --color=never --glob "*"'
+else
+    let g:ctrlp_user_command = 'grep -r %s'
+endif
 let g_ctrlp_user_caching = 0
 nnoremap <Leader>t :CtrlPTag<CR>
-command! -nargs=1 NotesGrep execute 'silent grep! -S "<args>" "$HOME/notes/"' | redraw! | botright vertical cwindow | vertical resize 45
-" command! -nargs=1 NotesGrep execute 'silent grep! -r -i --include="*.md" "<args>" "$HOME/notes/"' | redraw! | botright vertical cwindow | vertical resize 45
-nnoremap <Leader>ns :NotesGrep
 if executable('rga')
     set grepprg=rga\ --vimgrep
+
+    command! -nargs=1 NotesGrep execute 'silent grep! -S "<args>" "$HOME/notes/"'
+        \ | redraw! | botright vertical cwindow | vertical resize 45
+else
+    command! -nargs=1 NotesGrep
+        \ execute 'silent grep! -r -i --include="*.md" "<args>" "$HOME/notes/"'
+        \ | redraw! | botright vertical cwindow | vertical resize 45
 endif
+nnoremap <Leader>ns :NotesGrep
 
 xnoremap <silent> in :<C-U>call SelectInNumber()<CR>
 onoremap <silent> in :<C-U>call SelectInNumber()<CR>
