@@ -1,0 +1,82 @@
+general {
+    output_format = "i3bar"
+    colors = true
+    interval = 5
+}
+
+order += "read_file weather"
+order += "wireless _first_"
+order += "ethernet _first_"
+order += "battery 0"
+order += "memory"
+#order += "load"
+order += "cpu_usage"
+order += "volume master"
+order += "tztime local"
+order += "tztime Indiana"
+
+read_file weather {
+    path = "/home/rjframe/.cache/weather.txt"
+    format = "%content"
+    color_good = "#e0e0e0"
+}
+
+wireless _first_ {
+        format_up = "%quality on %essid (%bitrate): %ip"
+        format_down = "📶: down"
+}
+
+ethernet _first_ {
+        format_up = "🖧: %ip (%speed)"
+        format_down = ""
+        #format_down = "🖧: down"
+}
+
+battery 0 {
+        format = "    %status %percentage Left: %remaining (%emptytime)    "
+        format_down = "<battery not detected>"
+        status_chr = "⚡"
+        #status_chr = "⚡ CHR"
+        status_bat = ""
+        status_unk = "? UNK"
+        status_full = ""
+        path = "/sys/class/power_supply/BAT%d/uevent"
+        low_threshold = 10
+        integer_battery_capacity = true
+}
+
+load {
+        format = "%5min"
+}
+
+cpu_usage {
+    format = ""
+    format_above_threshold = " CPU: %usage"
+}
+
+memory {
+        format = "RAM: %available (%percentage_available)"
+        threshold_degraded = "10%"
+        threshold_critical = "5%"
+        #format_degraded = "MEMORY: %free"
+}
+
+volume master {
+    color_good = "#2222ff"
+    format = "♪: %volume"
+    format_muted = "♪: muted (%volume)"
+    device = "default"
+    mixer = "Master"
+    mixer_idx = 0
+}
+
+tztime local {
+    format = "%Y-%m-%d %H:%M"
+    separator = false
+}
+
+tztime Indiana {
+    format = "(@home %H:%M)"
+    timezone = "America/Indiana/Indianapolis"
+    hide_if_equals_localtime = true
+}
