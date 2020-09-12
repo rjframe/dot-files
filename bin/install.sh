@@ -3,7 +3,7 @@
 # Run this from the dot-files directory.
 # TODO: Both install scripts should source a common one to remove duplication.
 
-sudo pacman -S rsync openssh gawk vim w3m zsh ttf-fira-code
+sudo pacman -S rsync openssh gawk gvim w3m zsh ttf-fira-code
 
 BASE=`pwd`
 
@@ -26,4 +26,19 @@ vim +PluginInstall +qall
 
 ln -s "$BASE/.gitconfig" "$HOME/.gitconfig"
 ln -s "$BASE/.gitconfig" "$HOME/.gitignore"
+
+services=(
+    mbsync.service
+    mbsync.timer
+    sieve.service
+    thunar.service
+    udiskie.service
+    weather.service
+    weather.timer
+)
+
+for service in "${services[@]}"; do
+    ln -s "$BASE/.config/systemd/user/$service" \
+        "$HOME/.config/systemd/user/$service"
+done
 

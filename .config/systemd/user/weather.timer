@@ -1,0 +1,12 @@
+[Unit]
+Description=Schedule download of weather report
+Wants=network-online.target
+After=network-online.target
+
+[Timer]
+OnBootSec=5
+OnUnitActiveSec=30m
+Unit=weather.service
+
+[Install]
+WantedBy=timers.target

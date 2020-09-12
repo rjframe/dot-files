@@ -1,0 +1,8 @@
+[Unit]
+Description=Download weather report from wttr.in
+
+[Service]
+Type=oneshot
+ExecStart=%h/.config/i3status/weather.sh
+#ExecStart=/usr/bin/curl wttr.in/?format=3 > ~/.config/i3status/weather.txt
+#ExecStart=/bin/bash -c "curl wttr.in/?format=3 > ~/.config/i3status/weather.txt"

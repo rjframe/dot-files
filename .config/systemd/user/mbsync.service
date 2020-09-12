@@ -1,0 +1,9 @@
+[Unit]
+Description=Mailbox sync service
+Wants=sieve.service
+Before=sieve.service
+
+[Service]
+Type=oneshot
+ExecStart=/usr/bin/mbsync -a
+ExecStopPost=notify-send -i /usr/share/icons/Adwaita/32x32/status/mail-unread-symbolic.symbolic.png -t 1500 "Mailbox synced"

@@ -1,0 +1,9 @@
+[Unit]
+Description=Automount external devices
+
+[Service]
+ExecStart=/sbin/udiskie
+Type=exec
+
+[Install]
+WantedBy=multi-user.target

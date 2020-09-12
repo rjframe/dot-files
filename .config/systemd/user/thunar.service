@@ -1,0 +1,6 @@
+[Unit]
+Description=thunar daemon
+
+[Service]
+Type=simple
+ExecStart=/sbin/thunar --daemon
