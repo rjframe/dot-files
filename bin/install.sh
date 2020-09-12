@@ -15,6 +15,7 @@ ln -s "$BASE/.zshenv" "$HOME/.zshenv"
 mkdir "$HOME/.config"
 ln -sr "$BASE/.config/shells" "$HOME/.config/shells"
 
+ln -sr "$BASE/.config/sway" "$HOME/.config/sway"
 ln -sr "$BASE/.config/i3status" "$HOME/.config/i3status"
 
 ln -sr "$BASE/.vim" "$HOME/.vim"
