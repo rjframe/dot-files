@@ -3,16 +3,7 @@
 # Run this from the dot-files directory.
 # TODO: Both install scripts should source a common one to remove duplication.
 
-# TODO: if <distro> install:
-
-# tmux: tmuxp
-# zplug: python gawk
-sudo apt update && sudo apt install python3-tmuxp python gawk
-
-# Stuff I always want
-sudo apt install ansible curl rsync ssh tmux vim w3m zsh
-
-sudo pacman -S rsync openssh tmux tmuxp gawk vim w3m zsh
+sudo pacman -S rsync openssh gawk vim w3m zsh
 
 BASE=`pwd`
 
