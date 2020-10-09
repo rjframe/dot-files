@@ -45,6 +45,9 @@ if ! command -v gvim; then
     alias gvim=vim
 fi
 
+# Because I think I'm always in vim.
+alias :e='vim'
+
 alias play="ansible-playbook --ask-become-pass -i production_inventory.yml"
 alias playchk="ansible-playbook --syntax-check -i production_inventory.yml"
 
