@@ -4,9 +4,10 @@ export EDITOR=vim
 export PAGER='less -X'
 export MANPAGER='less -X'
 
-export RUST_SRC_PATH="$(rustc --print sysroot)/lib/rustlib/src/rust/src"
 
-PATH="$HOME/bin:$HOME/.local/bin:/sbin:/usr/sbin:$PATH:$HOME/.cargo/bin"
+PATH="$HOME/bin:$HOME/.local/bin:$HOME/.cargo/bin:$PATH:/sbin:/usr/sbin"
+
+export RUST_SRC_PATH="$(rustc --print sysroot)/lib/rustlib/src/rust/src"
 
 if [ -f $HOME/.config/shells/bash_aliases ]; then
     . $HOME/.config/shells/bash_aliases
