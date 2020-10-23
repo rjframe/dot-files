@@ -14,11 +14,7 @@ if g:env == 'WINDOWS'
     let &runtimepath="$HOME/.vim,$VIM/vimfiles,$VIMRUNTIME,$VIM/vimfiles/after,$HOME/.vim/after"
 endif
 
-if filereadable('$HOME/.remoteprofile')
-    let g:isremoteprofile = 1
-else
-    let g:isremoteprofile = 0
-endif
+let g:isremoteprofile = filereadable(expand('$HOME/.remoteprofile'))
 " == End - modify the environment for vim. ==
 
 filetype off
@@ -53,7 +49,7 @@ if ! g:isremoteprofile
     Plugin 'mattn/calendar-vim'
 
     " Native Vim package
-    packadd! vimspector
+    silent! packadd! vimspector
 endif
 
 if g:env != 'WINDOWS'
