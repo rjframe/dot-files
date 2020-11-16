@@ -48,8 +48,8 @@ fi
 # Because I think I'm always in vim.
 alias :e='vim'
 
-alias play="ansible-playbook --ask-become-pass -i production_inventory.yml"
-alias playchk="ansible-playbook --syntax-check -i production_inventory.yml"
+alias play="ansible-playbook --ask-become-pass -i inventory.yml"
+alias playchk="ansible-playbook --syntax-check -i inventory.yml"
 
 # Recursively remove .DS_Store files (from macOS).
 alias dsrm="find . -name '.DS_Store' -type f -ls -delete"
