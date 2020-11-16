@@ -27,6 +27,7 @@ Plugin 'junegunn/vim-peekaboo'
 Plugin 'mbbill/undotree'
 
 Plugin 'ntpeters/vim-better-whitespace'
+
 if ! g:isremoteprofile
     Plugin 'tpope/vim-endwise'
     Plugin 'tpope/vim-fugitive'
@@ -35,7 +36,7 @@ if ! g:isremoteprofile
     Plugin 'ludovicchabant/vim-gutentags'
     Plugin 'majutsushi/tagbar'
 
-    Plugin 'vimwiki/vimwiki'
+    " Plugin 'vimwiki/vimwiki'
     Plugin 'camspiers/lens.vim'
     Plugin 'ctrlpvim/ctrlp.vim'
 
@@ -183,22 +184,29 @@ nnoremap <F10> <Plug>VimspectorStepOver
 nnoremap <F11> <Plug>VimspectorStepInto
 nnoremap <F12> <Plug>VimspectorStepOut
 
-" Note taking:
-" Experiment to work without vimwiki. TODO: May need revised to work on Windows.
+""" Note taking:
+
+" TODO: May need revised to work on Windows.
 " Also see .vim/before/tags.vim for ctags setup.
 " Largely from https://www.edwinwenink.xyz/posts/42-vim_notetaking/
+" TODO: I want easy recursive and non-recursive searches.
+
 " Open index page
 nnoremap <Leader>ni :e $HOME/notes/index.md<CR>
 " Create new note
 nnoremap <Leader>nn
     \ :execute ":e $HOME/notes/" . strftime("%Y%m%d%H%M%S") . ".md"<CR>
+nnoremap <Leader>t :CtrlPTag<CR>
+nnoremap <Leader>ns :NotesGrep
+
+let g_ctrlp_user_caching = 0
+
 if executable('rg')
     let g:ctrlp_user_command = 'rg %s --files --color=never --glob "*"'
 else
     let g:ctrlp_user_command = 'grep -r %s'
 endif
-let g_ctrlp_user_caching = 0
-nnoremap <Leader>t :CtrlPTag<CR>
+
 if executable('rga')
     set grepprg=rga\ --vimgrep
 
@@ -209,7 +217,8 @@ else
         \ execute 'silent grep! -r -i --include="*.md" "<args>" "$HOME/notes/"'
         \ | redraw! | botright vertical cwindow | vertical resize 45
 endif
-nnoremap <Leader>ns :NotesGrep
+
+""" END Note taking
 
 xnoremap <silent> in :<C-U>call SelectInNumber()<CR>
 onoremap <silent> in :<C-U>call SelectInNumber()<CR>
