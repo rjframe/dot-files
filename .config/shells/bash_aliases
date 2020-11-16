@@ -47,6 +47,8 @@ fi
 
 # Because I think I'm always in vim.
 alias :e='vim'
+alias :q='exit'
+alias :qa='exit'
 
 alias play="ansible-playbook --ask-become-pass -i inventory.yml"
 alias playchk="ansible-playbook --syntax-check -i inventory.yml"
