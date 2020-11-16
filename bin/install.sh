@@ -17,6 +17,7 @@ ln -sr "$BASE/.config/shells" "$HOME/.config/shells"
 
 ln -sr "$BASE/.config/sway" "$HOME/.config/sway"
 ln -sr "$BASE/.config/i3status" "$HOME/.config/i3status"
+ln -sr "$BASE/.config/i3status-rust" "$HOME/.config/i3status-rust"
 ln -sr "$BASE/.config/kitty" "$HOME/.config/kitty"
 
 ln -sr "$BASE/.vim" "$HOME/.vim"

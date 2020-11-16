@@ -67,3 +67,10 @@ function extract() {
 function pdf() {
     pdftoroff -w "${1}" | w3m -dump -T text/html | less
 }
+
+# i3status-rust integration for the cmus music player.
+function cmus() {
+    /usr/bin/cmus "$@"
+    echo '' > ~/.cache/cmus_playing.txt
+    /bin/kill -s RTMIN+1 i3status-rs
+}
