@@ -41,7 +41,7 @@ fi
 
 alias svim='sudo vim'
 alias vi=vim
-if ! command -v gvim; then
+if ! command -v gvim >/dev/null; then
     alias gvim=vim
 fi
 
@@ -54,7 +54,7 @@ alias playchk="ansible-playbook --syntax-check -i inventory.yml"
 # Recursively remove .DS_Store files (from macOS).
 alias dsrm="find . -name '.DS_Store' -type f -ls -delete"
 
-if command -v lsof; then
+if command -v lsof >/dev/null; then
     alias listeners='sudo lsof -iTCP -sTCP:LISTEN -P'
 fi
 
