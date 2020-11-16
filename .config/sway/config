@@ -17,6 +17,9 @@ set $work1 1: home
 set $work2 2: dev1
 set $work3 3: dev2
 
+set $int_monitor: eDP-1
+set $ext_monitor: HDMI-A-2
+
 ### Output configuration
 # You can get the names of your outputs by running: swaymsg -t get_outputs
 
