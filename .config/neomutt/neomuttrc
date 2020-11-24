@@ -1,0 +1,102 @@
+set realname = 'Ryan Frame'
+
+# The main profile is sourced here.
+# source me_example_com
+
+set reverse_name = yes
+set mbox_type = Maildir
+
+# View formatted text from HTML emails.
+set mailcap_path = ~/.config/neomutt/mailcap
+auto_view text/html
+
+# Or use Firefox if we need it.
+# TODO: I need to save all image attachments too; I won't be happy until I can
+# read my daily UTM emails using this.
+macro attach 'V' '<pipe-entry>iconv -c --to-code=UTF8 > ~/.cache/mail.html && firefox ~/.cache/mail.html<Enter>' 'Open attachment in Firefox'
+
+folder-hook '.' 'set sort=threads'
+folder-hook 'Inbox$' 'set sort=date'
+
+set delete = yes
+set abort_noattach = ask-yes
+
+# Address book integration.
+set query_command = "abook --mutt-query '%s'"
+bind editor <Tab> complete-query
+macro index,pager a '<pipe-message>abook --add-email-quiet<Enter>'
+
+set sendmail = '/usr/bin/msmtp'
+#set sendmail = '/usr/local/bin/msmtpqueue/msmtp-enqueue.sh'
+
+set check_new = yes
+
+set mail_check_stats = yes
+set sidebar_visible = yes
+set sidebar_format = "%B %?N?(%N)?%* %S"
+
+set sidebar_folder_indent = yes
+set sidebar_indent_string = ' ⍿···'
+set sidebar_short_path = yes
+
+set pager_index_lines = 4
+
+# We'll use space as a leader for custom commands.
+bind index,pager <Space> noop
+
+bind index \Co sidebar-toggle-visible
+bind index \Cj sidebar-next
+bind index \Ck sidebar-prev
+bind index \Cl sidebar-open
+
+bind index D purge-message
+
+bind attach,index,pager     g   noop
+bind index,pager            gr  group-reply
+
+# Move message to archive.
+macro index,pager <Space>a ':set confirmappend=no<Enter><save-message>=Inbox/Archive<Enter>:set confirmappend=yes<Enter>' 'Send message to archive.'
+# Move message to short-term archive.
+## TODO: This only applies to my personal profile.
+macro index,pager <Space>st ':set confirmappend=no<Enter><save-message>=Inbox/Archive/temp<Enter>:set confirmappend=yes<Enter>' 'Send message to short-term archive.'
+# Move message to the reply-later queue.
+macro index,pager <Space>r ':set confirmappend=no<Enter><save-message>=Inbox/Reply_Queue<Enter>:set confirmappend=yes<Enter>' 'Send message to reply queue.'
+
+# Add the sender to the safelist.
+macro index,pager <Space>sl "<pipe-message>sed -n '/\^From: /{p;q}' | cut -d'<' -f2 | cut -d'>' -f1 >> $HOME/.Mail/safelist<Enter>" "Add sender to the safelist."
+# Add the sender to the blocklist.
+macro index,pager <Space>b "<pipe-message>sed -n '/\^From: /{p;q}' | cut -d'<' -f2 | cut -d'>' -f1 >> $HOME/.Mail/blocklist<Enter>" "Add sender to the blocklist."
+
+# Add the sender as an allowed mailing list.
+macro index,pager <Space>m "<pipe-message>sed -n '/\^From: /{p;q}' | cut -d'<' -f2 | cut -d'>' -f1 >> $HOME/.Mail/mailinglists<Enter>" "Add sender as mailing list."
+# Add the sender as a low priority sender.
+macro index,pager <Space>l "<pipe-message>sed -n '/\^From: /{p;q}' | cut -d'<' -f2 | cut -d'>' -f1 >> $HOME/.Mail/lowpriority<Enter>" "Add sender as low priority."
+
+# Mark anything in the temp archive for deletion once older than one month.
+# We do ignore flagged messages; there should only be a flagged message if I'm
+# not 100% sure I won't need it yet.
+folder-hook temp 'push <delete-pattern>~r>1m!~F<Enter>'
+
+
+# Vim-like bindings
+
+bind attach,browser,index,pager \CF next-page
+bind attach,browser,index,pager \CB previous-page
+bind attach,browser,index       gg  first-entry
+bind attach,browser,index       G   last-entry
+bind pager                      gg  top
+bind pager                      G   bottom
+bind pager                      j   next-line
+bind pager                      k   previous-line
+unbind pager                    i   # exit
+bind pager                      q   exit
+
+bind pager,index                d   noop
+bind pager,index                dd  delete-message
+bind pager,index                dT  delete-thread
+bind pager,index                dt  delete-subthread
+
+
+subscribe accu-general
+subscribe librem-5-dev-request
+subscribe themaintainers-request
