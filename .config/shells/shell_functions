@@ -1,5 +1,10 @@
 # Common shell functions
 
+# Quick backup of file
+function bak() {
+    cp "${1}" "${1}.bak"
+}
+
 # Create a directory then enter it.
 function mkcd() {
 	mkdir "${1}" && cd "${1}"

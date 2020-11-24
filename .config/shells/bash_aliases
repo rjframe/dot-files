@@ -10,6 +10,9 @@ alias ls='ls -lph --color=auto'
 alias la='ls -A'
 alias l='ls -CF'
 
+# Recursive diff on two directories.
+alias diffr='diff -rp'
+
 # Usage: 'recent 5', etc.
 alias recent='ls -1t | tail -n +2 | head -n'
 
