@@ -140,6 +140,8 @@ nnoremap <Del> <Nop>
 
 " Mappings
 
+nnoremap s :syntax sync fromstart<CR>
+
 nnoremap Q @@
 
 " Window Management. The auto-size code is in plugin/gui.vim
