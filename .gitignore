@@ -11,4 +11,5 @@
 .vim/pack/*
 .config/shells/.zcompdump
 .config/shells/.zsh_history
+.config/neomutt/*
 tags

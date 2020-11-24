@@ -5,3 +5,4 @@ Description=Run sieve filters on my mailbox
 Type=oneshot
 ExecStart=/home/rjframe/.Mail/sieve/sieve.sh
 WorkingDirectory=/home/rjframe/.Mail/ryan_ryanjframe_com
+StandardOutput=null

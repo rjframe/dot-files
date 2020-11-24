@@ -17,6 +17,23 @@ warning_fg = "#151515"
 critical_bg = "#AC4142"
 critical_fg = "#151515"
 
+
+[[block]]
+block = "maildir"
+interval = 60
+inboxes = ["/home/rjframe/.Mail/me_example_com/Inbox"]
+threshold_warning = 2
+threshold_critical = 10
+display_type = "new"
+
+[[block]]
+block = "maildir"
+interval = 60
+inboxes = ["/home/rjframe/.Mail/me_example_com/Inbox/Screener"]
+threshold_warning = 5
+threshold_critical = 15
+display_type = "new"
+
 [[block]]
 block = "custom"
 command = "cat ~/.cache/cmus_playing.txt"
