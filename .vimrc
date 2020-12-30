@@ -123,7 +123,7 @@ set laststatus=2
 set scrolloff=5
 set showmatch
 
-set modelines=0
+set modelines=1
 
 set numberwidth=4
 set columns=87
