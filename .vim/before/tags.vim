@@ -35,6 +35,7 @@ let g:gutentags_ctags_exclude = [
 let g:gutentags_ctags_extra_args = [
     \ '--fields=+ailmnrS',
     \ '--extras=+q',
+    \ '--regex-d=/^\s*\w+!\w+\s+(\w+)\(/\1/f/',
     \ '--langdef=mdtags',
     \ '--langmap=mdtags:.md',
     \ '--mline-regex-mdtags=/(^|[[:space:]])@(\w\S*)/\2/t/{mgroup=1}'
