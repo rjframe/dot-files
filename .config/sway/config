@@ -113,6 +113,10 @@ bindsym $mod+Shift+$down move down
 bindsym $mod+Shift+$up move up
 bindsym $mod+Shift+$right move right
 
+# Move workspaces between outputs
+bindsym $mod+Control+$left move workspace output left
+bindsym $mod+Control+$right move workspace output right
+
 # Workspaces:
 
 bindsym $mod+1 workspace $work1
