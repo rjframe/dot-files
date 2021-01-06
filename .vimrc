@@ -32,6 +32,7 @@ if ! g:isremoteprofile
     Plugin 'tpope/vim-endwise'
     Plugin 'tpope/vim-fugitive'
     Plugin 'junegunn/gv.vim'
+    Plugin 'romainl/vim-cool'
 
     Plugin 'ludovicchabant/vim-gutentags'
     Plugin 'majutsushi/tagbar'
