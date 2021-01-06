@@ -4,6 +4,7 @@ export EDITOR=vim
 export PAGER='less -X'
 export MANPAGER='less -X'
 
+export MOZ_ENABLE_WAYLAND=1
 
 PATH="$HOME/bin:$HOME/.local/bin:$HOME/.cargo/bin:$PATH:/sbin:/usr/sbin"
 
@@ -26,8 +27,6 @@ if [ -f $HOME/.asdf/asdf.sh ]; then
     . $HOME/.asdf/asdf.sh
     . $HOME/.asdf/completions/asdf.bash
 fi
-
-test -r /home/rjframe/.opam/opam-init/init.sh && . /home/rjframe/.opam/opam-init/init.sh > /dev/null 2> /dev/null || true
 
 if command -v fortune 1>/dev/null;  then
 	fortune -e
