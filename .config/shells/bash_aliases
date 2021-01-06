@@ -4,7 +4,7 @@ else
     GLOBAL=""
 fi
 
-alias mv='mv -v'
+alias $GLOBAL mv='mv -v'
 
 alias ls='ls -lph --color=auto'
 alias la='ls -A'
