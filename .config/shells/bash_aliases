@@ -28,6 +28,8 @@ alias open='xdg-open'
 alias df='df -h'
 alias du='du -h'
 
+alias mkdir='mkdir -p'
+
 # Pipe text to this
 alias rot13="tr 'A-Za-z' 'N-ZA-Mn-za-m'"
 
