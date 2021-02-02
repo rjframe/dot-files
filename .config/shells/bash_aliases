@@ -55,6 +55,9 @@ alias :e='vim'
 alias :q='exit'
 alias :qa='exit'
 
+alias cargo-update="cargo install --list | grep -v '    ' | awk '{print $1}' \
+    | xargs cargo install"
+
 alias play="ansible-playbook --ask-become-pass -i inventory.yml"
 alias playchk="ansible-playbook --syntax-check -i inventory.yml"
 
