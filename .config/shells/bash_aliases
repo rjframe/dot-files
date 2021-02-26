@@ -22,7 +22,7 @@ alias $GLOBAL egrep='egrep --color=auto'
 
 alias psg='ps -A | grep'
 
-alias make='clear && make'
+# alias make='clear && make'
 alias open='xdg-open'
 
 alias df='df -h'
@@ -46,9 +46,7 @@ fi
 
 alias svim='sudo vim'
 alias vi=vim
-if ! command -v gvim >/dev/null; then
-    alias gvim=vim
-fi
+alias gvim=vim
 
 # Because I think I'm always in vim.
 alias :e='vim'
@@ -61,9 +59,6 @@ alias cargo-update="cargo install --list | grep -v '    ' | awk '{print $1}' \
 alias play="ansible-playbook --ask-become-pass -i inventory.yml"
 alias playchk="ansible-playbook --syntax-check -i inventory.yml"
 
-# Recursively remove .DS_Store files (from macOS).
-alias dsrm="find . -name '.DS_Store' -type f -ls -delete"
-
 if command -v lsof >/dev/null; then
     alias listeners='sudo lsof -iTCP -sTCP:LISTEN -P'
 fi
@@ -71,3 +66,7 @@ fi
 if [ "$TERM" = 'xterm-kitty' ]; then
     alias icat='kitty +kitten icat'
 fi
+
+# uPIM aliases
+alias ue=upim-edit
+alias uc=upim-contact
