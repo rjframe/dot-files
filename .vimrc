@@ -117,13 +117,17 @@ let g:lightline.component_type = {
 \}
 
 let g:lightline.active = {
-    \ 'right': [[
-        \ 'linter_checking',
-        \ 'linter_errors',
-        \ 'linter_warnings',
-        \ 'linter_infos',
-        \ 'linter_ok'
-    \]]
+    \ 'right': [
+        \[
+            \ 'linter_checking',
+            \ 'linter_errors',
+            \ 'linter_warnings',
+            \ 'linter_infos',
+            \ 'linter_ok'
+        \],
+        \[ 'lineinfo' ],
+        \[ 'percent' ]
+    \]
 \}
 
 let g:lightline#ale#indicator_checking = "\uf110"
