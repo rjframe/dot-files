@@ -37,7 +37,6 @@ if ! g:isremoteprofile
     Plugin 'ludovicchabant/vim-gutentags'
     Plugin 'majutsushi/tagbar'
 
-    " Plugin 'vimwiki/vimwiki'
     Plugin 'camspiers/lens.vim'
     Plugin 'ctrlpvim/ctrlp.vim'
 
@@ -45,7 +44,6 @@ if ! g:isremoteprofile
     Plugin 'pearofducks/ansible-vim'
     Plugin 'bigeagle/sieve.vim'
     Plugin 'rust-lang/rust.vim'
-    Plugin 'racer-rust/vim-racer'
     " Plugin 'michaeljsmith/vim-indent-object'
 
     Plugin 'mattn/calendar-vim'
