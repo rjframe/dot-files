@@ -53,12 +53,22 @@ input "2:7:SynPS/2_Synaptics_TouchPad" {
    middle_emulation enabled
 }
 
-input "1:1:AT_Translated_Set_2_keyboard" {
+# Using both type:... and specific keyboards opens me up to bug 5943.
+# TODO: I could probably fix this.
+# https://github.com/swaywm/sway/issues/5943
+
+input "type:keyboard" {
     xkb_options ctrl:nocaps
 }
 
+input "1:1:AT_Translated_Set_2_keyboard" {
+    xkb_numlock disabled
+}
+
 input "1133:8209:Logitech_K520" {
-    xkb_options ctrl:nocaps
+    xkb_numlock enabled
+}
+input "1133:8209:Logitech_Wireless_Device_PID:2011" {
     xkb_numlock enabled
 }
 
