@@ -11,7 +11,7 @@ set $up k
 set $right l
 
 set $term kitty
-set $menu wofi --show run | xargs swaymsg exec --
+set $menu wofi --show drun | xargs swaymsg exec --
 
 set $work1 1: home
 set $work2 2: dev1
