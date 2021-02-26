@@ -44,12 +44,12 @@ set pager_index_lines = 4
 # We'll use space as a leader for custom commands.
 bind index,pager <Space> noop
 
-bind index \Co sidebar-toggle-visible
+bind index,pager \Co sidebar-toggle-visible
 bind index \Cj sidebar-next
 bind index \Ck sidebar-prev
 bind index \Cl sidebar-open
 
-bind index D purge-message
+bind index,pager D purge-message
 
 bind attach,index,pager     g   noop
 bind index,pager            gr  group-reply
