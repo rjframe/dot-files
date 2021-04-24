@@ -21,6 +21,8 @@ ln -sr "$BASE/.config/i3status-rust" "$HOME/.config/i3status-rust"
 ln -sr "$BASE/.config/kitty" "$HOME/.config/kitty"
 ln -sr "$BASE/.config/neomutt" "$HOME/.config/neomutt"
 
+ln -sr "$BASE/.config/upim" "$HOME/.config/upim"
+
 ln -sr "$BASE/.Mail/sieve" "$HOME/.Mail/sieve"
 
 ln -sr "$BASE/.vim" "$HOME/.vim"
