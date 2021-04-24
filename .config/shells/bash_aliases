@@ -23,6 +23,8 @@ alias $GLOBAL egrep='egrep --color=auto'
 alias psg='ps -A | grep'
 
 # alias make='clear && make'
+alias pm='python manage.py'
+
 alias open='xdg-open'
 
 alias df='df -h'

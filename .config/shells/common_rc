@@ -10,6 +10,8 @@ PATH="$HOME/bin:$HOME/.local/bin:$HOME/.cargo/bin:$PATH:/sbin:/usr/sbin"
 
 export RUST_SRC_PATH="$(rustc --print sysroot)/lib/rustlib/src/rust/src"
 
+source /bin/virtualenvwrapper.sh
+
 if [ -f $HOME/.config/shells/bash_aliases ]; then
     . $HOME/.config/shells/bash_aliases
 fi

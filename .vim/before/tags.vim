@@ -26,6 +26,7 @@ let g:gutentags_add_ctrlp_root_markers = 0
 
 let g:gutentags_ctags_exclude = [
     \ '*/build/*', '*/bin/*', '*/cache/*',
+    \ 'manage.py',
     \ '*.htm', '*.html', '*.xml',
     \ '*.json', '*.sdl',
     \ 'tags*'

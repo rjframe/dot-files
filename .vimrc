@@ -46,6 +46,7 @@ if ! g:isremoteprofile
     Plugin 'martin-svk/vim-yaml'
     Plugin 'pearofducks/ansible-vim'
     Plugin 'bigeagle/sieve.vim'
+    Plugin 'Vimjas/vim-python-pep8-indent'
     Plugin 'rust-lang/rust.vim'
     " Plugin 'michaeljsmith/vim-indent-object'
 
@@ -70,10 +71,13 @@ call vundle#end()
 
 let g:ale_linters = {'rust': ['analyzer', 'cargo']}
 let g:ale_fixers = {'rust': ['analyzer', 'cargo']}
+
 " or: b:ale_fixers in rust.vim
 let g:ale_rust_analyzer_config = {
 \   'diagnostics': { 'disabled': ['inactive-code'] }
 \}
+let g:ale_python_mypy_ignore_invalid_syntax = 1
+
 let g:ale_completion_autoimport = 1
 let g:ale_hover_cursor = 1
 let g:ale_open_list = 1
