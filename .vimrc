@@ -53,6 +53,7 @@ if ! g:isremoteprofile
     Plugin 'martin-svk/vim-yaml'
 
     Plugin 'mattn/calendar-vim'
+    Plugin 'CrispyDrone/vim-tasks', { 'pinned': 1 }
 
     " Native Vim package
     silent! packadd! vimspector
@@ -149,6 +150,7 @@ filetype plugin indent on
 syntax on
 
 let mapleader=' '
+let maplocalleader=' '
 
 " TODO: Move this with ALE stuff above.
 nnoremap <Leader>h :ALEHover<CR>
