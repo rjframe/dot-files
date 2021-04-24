@@ -8,11 +8,11 @@ require ["fileinto", "test-pipe"];
 if pipe :header "grep -iFf /home/rjframe/.Mail/safelist" {
     stop;
 } elsif pipe :header "grep -iFf /home/rjframe/.Mail/lowpriority" {
-    fileinto "Inbox/IN";
+    fileinto "IN";
 } elsif pipe :header "grep -iFf /home/rjframe/.Mail/mailinglists" {
-    fileinto "Inbox/Mailing_Lists";
+    fileinto "Mailing_Lists";
 } elsif pipe :header "grep -iFf /home/rjframe/.Mail/blocklist" {
-    fileinto "Inbox/Trash";
+    fileinto "Trash";
 } else {
-    fileinto "Inbox/Screener";
+    fileinto "Screener";
 }

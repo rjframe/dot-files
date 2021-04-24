@@ -55,12 +55,12 @@ bind attach,index,pager     g   noop
 bind index,pager            gr  group-reply
 
 # Move message to archive.
-macro index,pager <Space>a ':set confirmappend=no<Enter><save-message>=Inbox/Archive<Enter>:set confirmappend=yes<Enter>' 'Send message to archive.'
+macro index,pager <Space>a ':set confirmappend=no<Enter><save-message>=Archive<Enter>:set confirmappend=yes<Enter>' 'Send message to archive.'
 # Move message to short-term archive.
 ## TODO: This only applies to my personal profile.
-macro index,pager <Space>st ':set confirmappend=no<Enter><save-message>=Inbox/Archive/temp<Enter>:set confirmappend=yes<Enter>' 'Send message to short-term archive.'
+macro index,pager <Space>st ':set confirmappend=no<Enter><save-message>=Archive/temp<Enter>:set confirmappend=yes<Enter>' 'Send message to short-term archive.'
 # Move message to the reply-later queue.
-macro index,pager <Space>r ':set confirmappend=no<Enter><save-message>=Inbox/Reply_Queue<Enter>:set confirmappend=yes<Enter>' 'Send message to reply queue.'
+macro index,pager <Space>r ':set confirmappend=no<Enter><save-message>=Reply_Queue<Enter>:set confirmappend=yes<Enter>' 'Send message to reply queue.'
 
 # Add the sender to the safelist.
 macro index,pager <Space>sl "<pipe-message>sed -n '/\^From: /{p;q}' | cut -d'<' -f2 | cut -d'>' -f1 >> $HOME/.Mail/safelist<Enter>" "Add sender to the safelist."
