@@ -39,16 +39,18 @@ if ! g:isremoteprofile
 
     Plugin 'camspiers/lens.vim'
     Plugin 'ctrlpvim/ctrlp.vim'
+    " Plugin 'michaeljsmith/vim-indent-object'
 
     Plugin 'dense-analysis/ale'
     Plugin 'maximbaz/lightline-ale'
 
-    Plugin 'martin-svk/vim-yaml'
     Plugin 'pearofducks/ansible-vim'
-    Plugin 'bigeagle/sieve.vim'
+    Plugin 'moll/vim-node'
     Plugin 'Vimjas/vim-python-pep8-indent'
     Plugin 'rust-lang/rust.vim'
-    " Plugin 'michaeljsmith/vim-indent-object'
+    Plugin 'gpanders/vim-scdoc'
+    Plugin 'bigeagle/sieve.vim'
+    Plugin 'martin-svk/vim-yaml'
 
     Plugin 'mattn/calendar-vim'
 
