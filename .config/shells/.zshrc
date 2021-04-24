@@ -31,6 +31,10 @@ HISTSIZE=1000
 SAVEHIST=2000
 HISTFILE=~/.zsh_history
 
+if [ -f $HOME/.asdf/asdf.sh ]; then
+    fpath=(${ASDF_DIR}/completions $fpath)
+fi
+
 # Use modern completion system
 autoload -Uz compinit
 compinit

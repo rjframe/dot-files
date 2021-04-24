@@ -79,4 +79,8 @@ if [ -f $HOME/.config/shells/common_rc ]; then
     . $HOME/.config/shells/common_rc
 fi
 
+if [ -f $HOME/.asdf/asdf.sh ]; then
+    . $HOME/.asdf/completions/asdf.bash
+fi
+
 source /home/rjframe/.config/broot/launcher/bash/br
