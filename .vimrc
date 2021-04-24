@@ -52,11 +52,7 @@ if ! g:isremoteprofile
     Plugin 'bigeagle/sieve.vim'
     Plugin 'martin-svk/vim-yaml'
 
-    Plugin 'mattn/calendar-vim'
     Plugin 'CrispyDrone/vim-tasks', { 'pinned': 1 }
-
-    " Native Vim package
-    silent! packadd! vimspector
 endif
 
 if g:env != 'WINDOWS'
@@ -228,7 +224,7 @@ nnoremap s :syntax sync fromstart<CR>
 
 nnoremap Q @@
 
-" Window Management. The auto-size code is in plugin/gui.vim
+" Window Management.
 set splitright
 nnoremap <C-H> <C-W>h
 nnoremap <C-J> <C-W>j
@@ -259,16 +255,6 @@ map <silent><Leader>g :call setbufvar(winbufnr(popup_atcursor(systemlist(
 
 nnoremap <F2> :UndotreeToggle<CR>
 nnoremap <F8> :TagbarToggle<CR>
-
-nnoremap <F5> <Plug>VimspectorContinue
-nnoremap <F6> <Plug>VimspectorStop
-nnoremap <Leader>bl :call vimspector#Launch()<CR>
-nnoremap <Leader>bb <Plug>VimspectorToggleBreakpoint
-nnoremap <Leader>bc <Plug>VimspectorToggleConditionalBreakpoint
-nnoremap <Leader>bf <Plug>VimspectorAddFunctionBreakpoint
-nnoremap <F10> <Plug>VimspectorStepOver
-nnoremap <F11> <Plug>VimspectorStepInto
-nnoremap <F12> <Plug>VimspectorStepOut
 
 """ Note taking:
 
