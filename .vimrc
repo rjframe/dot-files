@@ -64,84 +64,6 @@ let g:rainbow_active = 1
 
 call vundle#end()
 
-" ALE SETUP
-" TODO: Put this somewhere
-
-
-let g:ale_linters = {'rust': ['analyzer', 'cargo']}
-let g:ale_fixers = {'rust': ['analyzer', 'cargo']}
-
-" or: b:ale_fixers in rust.vim
-let g:ale_rust_analyzer_config = {
-\   'diagnostics': { 'disabled': ['inactive-code', 'unresolved-proc-macro'] }
-\}
-let g:ale_javascript_eslint_options = '--config ~/.config/eslintrc'
-let g:ale_python_mypy_ignore_invalid_syntax = 1
-
-let g:ale_completion_autoimport = 1
-let g:ale_hover_cursor = 1
-let g:ale_open_list = 1
-let g:ale_set_quickfix = 1
-let g:ale_set_highlights = 0
-let g:ale_warn_about_trailing_blank_lines = 0
-let g:ale_warn_about_trailing_whitespace = 0
-let g:ale_history_enabled = 0
-
-" Not working as I'd like: can't keep the window small.
-let g:lens#disabled_buftypes = ["quickfix"]
-"let g:ale_cursor_detail = 1
-let g:ale_close_preview_on_insert = 1
-"set splitbelow
-
-" Close the local list when the file buffers are closed.
-  augroup CloseLoclistWindowGroup
-    autocmd!
-    autocmd QuitPre * if empty(&buftype) | lclose | endif
-  augroup END
-
-" TODO: Use https://github.com/lacygoill/vim-virtual-text and get the location
-" and text of :ALEHover; place it as virtual text.
-
-let g:lightline = {}
-
-let g:lightline.component_expand = {
-    \ 'linter_checking': 'lightline#ale#checking',
-    \  'linter_infos': 'lightline#ale#infos',
-    \  'linter_warnings': 'lightline#ale#warnings',
-    \  'linter_errors': 'lightline#ale#errors',
-    \  'linter_ok': 'lightline#ale#ok',
-\}
-
-let g:lightline.component_type = {
-    \     'linter_checking': 'right',
-    \     'linter_infos': 'right',
-    \     'linter_warnings': 'warning',
-    \     'linter_errors': 'error',
-    \     'linter_ok': 'right',
-\}
-
-let g:lightline.active = {
-    \ 'right': [
-        \[
-            \ 'linter_checking',
-            \ 'linter_errors',
-            \ 'linter_warnings',
-            \ 'linter_infos',
-            \ 'linter_ok'
-        \],
-        \[ 'lineinfo' ],
-        \[ 'percent' ]
-    \]
-\}
-
-let g:lightline#ale#indicator_checking = "\uf110"
-let g:lightline#ale#indicator_infos = "\uf129"
-let g:lightline#ale#indicator_warnings = "\uf071"
-let g:lightline#ale#indicator_errors = "\uf05e"
-let g:lightline#ale#indicator_ok = ""
-
-" END ALE SETUP
-
 
 filetype plugin indent on
 syntax on
@@ -149,8 +71,6 @@ syntax on
 let mapleader=' '
 let maplocalleader=' '
 
-" TODO: Move this with ALE stuff above.
-nnoremap <Leader>h :ALEHover<CR>
 
 set textwidth=80
 
@@ -213,6 +133,12 @@ set lazyredraw
 
 " Keep the cursor's column position.
 set nostartofline
+
+" Close the quickfix and local list when all file buffers are closed.
+augroup CloseLoclistWindowGroup
+    autocmd!
+    autocmd QuitPre * if empty(&buftype) | cclose | lclose | endif
+augroup END
 
 " Unmappings
 
@@ -291,6 +217,8 @@ else
 endif
 
 """ END Note taking
+
+nnoremap <Leader>h :ALEHover<CR>
 
 xnoremap <silent> in :<C-U>call SelectInNumber()<CR>
 onoremap <silent> in :<C-U>call SelectInNumber()<CR>
