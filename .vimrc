@@ -77,8 +77,9 @@ let g:ale_fixers = {'rust': ['analyzer', 'cargo']}
 
 " or: b:ale_fixers in rust.vim
 let g:ale_rust_analyzer_config = {
-\   'diagnostics': { 'disabled': ['inactive-code'] }
+\   'diagnostics': { 'disabled': ['inactive-code', 'unresolved-proc-macro'] }
 \}
+let g:ale_javascript_eslint_options = '--config ~/.config/eslintrc'
 let g:ale_python_mypy_ignore_invalid_syntax = 1
 
 let g:ale_completion_autoimport = 1
