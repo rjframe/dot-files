@@ -69,6 +69,8 @@ if [ "$TERM" = 'xterm-kitty' ]; then
     alias icat='kitty +kitten icat'
 fi
 
+alias web='w3m -dump -T text/html'
+
 # uPIM aliases
 alias ue=upim-edit
 alias uc=upim-contact
