@@ -49,6 +49,7 @@ interval = 300
 
 [[block]]
 block = "networkmanager"
+on_click = "kitty nmtui"
 ap_format = "{ssid} ({strength}%)"
 
 [[block]]
@@ -68,7 +69,7 @@ interval = 60
 
 [[block]]
 block = "temperature"
-collapsed = false
+collapsed = true
 interval = 120
 
 [[block]]
