@@ -60,7 +60,7 @@ format = "{percentage}% ({time})"
 [[block]]
 block = "memory"
 display_type = "memory"
-format_mem = "{MAg} GB ({MAp}%)"
+format_mem = "{mem_avail;G} GB ({mem_avail_percents}%)"
 interval = 60
 
 [[block]]
