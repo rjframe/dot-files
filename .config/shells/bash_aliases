@@ -73,6 +73,13 @@ alias web='w3m -dump -T text/html'
 
 alias mkpdf='pdflatex -synctext=1 -interaction=nonstopmode'
 
+# Begin a pomodoro timer.
+alias pom="echo 'notify-send --urgency=normal \"STEP AWAY FROM THE COMPUTER\"' \
+    | at now + 50 minutes"
+
+# List pomodoro projects.
+alias pomp="cut -f1 $HOME/.pom_log | uniq"
+
 # uPIM aliases
 alias ue=upim-edit
 alias uc=upim-contact

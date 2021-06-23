@@ -79,3 +79,27 @@ function cmus() {
     echo '' > ~/.cache/cmus_playing.txt
     /bin/kill -s RTMIN+1 i3status-rs
 }
+
+# Record a completed pomodoro
+function poml() {
+    if [ -z "$1" ]; then
+        echo 'Usage: poml <project-name>'
+        echo 'Current projects are:'
+        pomp
+        return
+    fi
+
+    echo "$1\t`date --rfc-3339=seconds`" >> $HOME/.pom_log \
+        && date --rfc-3339=seconds
+}
+
+# Report the number of completed pomodoros today.
+# Future expansions:
+# - Allow specifying a date or date offset from today
+# - Basic weekly/monthly graphs
+function pomr() {
+    tail -n20 "$HOME/.pom_log" | while read rec;
+        do case $(echo "$rec" | cut -f2) in $(date -Idate)*) echo a
+        esac;
+    done | wc -l
+}
