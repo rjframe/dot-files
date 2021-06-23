@@ -79,6 +79,8 @@ input "1133:8209:Logitech_Wireless_Device_PID:2011" {
 ### Key bindings
 
 bindsym $mod+Return exec $term
+bindsym $mod+Shift+Return \
+    exec $term --session=$HOME/.config/kitty/dev-session.conf
 bindsym $mod+d exec $menu
 
 # Kill focused window
@@ -212,6 +214,8 @@ for_window [title="KeePassXC"] \
     move output $int_monitor, \
     floating enable, \
     move position 1100 px 400 px
+
+for_window [app_id="kitty"] border none
 
 # Status Bar:
 
