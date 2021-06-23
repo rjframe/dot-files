@@ -50,7 +50,7 @@ interval = 300
 [[block]]
 block = "networkmanager"
 on_click = "kitty nmtui"
-ap_format = "{ssid} ({strength}%)"
+ap_format = "{ssid} ({strength})"
 
 [[block]]
 block = "battery"
@@ -60,7 +60,7 @@ format = "{percentage}% ({time})"
 [[block]]
 block = "memory"
 display_type = "memory"
-format_mem = "{mem_avail;G} GB ({mem_avail_percents}%)"
+format_mem = "{mem_avail;G} GB ({mem_avail_percents})"
 interval = 60
 
 [[block]]
