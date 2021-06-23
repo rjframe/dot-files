@@ -235,8 +235,13 @@ bar {
     strip_workspace_numbers yes
 }
 
+# Start applications:
+
 ## Notifications
 exec mako --max-visible 4 --layer overlay
+
+exec wlr-sunclock --margins "0,0,0,16" --anchors tr
+exec udiskie
 
 # TODO: I should probably move most of this conf into here and restore the
 # default for easy upgrades. Probably will wait until the first difficult
