@@ -71,6 +71,8 @@ fi
 
 alias web='w3m -dump -T text/html'
 
+alias mkpdf='pdflatex -synctext=1 -interaction=nonstopmode'
+
 # uPIM aliases
 alias ue=upim-edit
 alias uc=upim-contact
