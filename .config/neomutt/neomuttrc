@@ -95,6 +95,7 @@ bind pager,index                d   noop
 bind pager,index                dd  delete-message
 bind pager,index                dT  delete-thread
 bind pager,index                dt  delete-subthread
+bind pager,index                dD  purge-thread
 
 
 subscribe accu-general
