@@ -18,6 +18,8 @@
 [credential]
     helper = store
 [pull]
-	ff = only
+    ff = only
 [init]
-	defaultBranch = main
+    defaultBranch = main
+[sendemail]
+    smtpserver = /usr/bin/msmtp
