@@ -9,6 +9,8 @@ export MOZ_ENABLE_WAYLAND=1
 PATH="$HOME/bin:$HOME/.local/bin:$HOME/.cargo/bin:$PATH:/sbin:/usr/sbin"
 
 export RUST_SRC_PATH="$(rustc --print sysroot)/lib/rustlib/src/rust/src"
+export SCCACHE_DIR=$HOME/.cache_ondisk/sccache
+export SCCACHE_CACHE_SIZE=2G
 
 source /bin/virtualenvwrapper.sh
 
