@@ -14,8 +14,8 @@ export SCCACHE_CACHE_SIZE=2G
 
 source /bin/virtualenvwrapper.sh
 
-if [ -f $HOME/.config/shells/bash_aliases ]; then
-    . $HOME/.config/shells/bash_aliases
+if [ -f $HOME/.config/shells/shell_aliases ]; then
+    . $HOME/.config/shells/shell_aliases
 fi
 
 if [ -f $HOME/.config/shells/shell_functions ]; then
