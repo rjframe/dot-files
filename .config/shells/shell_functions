@@ -43,6 +43,40 @@ function gh-pr() {
     git checkout "pr/$2"
 }
 
+# Extend cargo subcommands.
+function cargo() {
+    # Alternatively, just above this function:
+    # unset -f cargo
+    # CARGO=$(which cargo)
+    local CARGO="$HOME/.cargo/bin/cargo"
+
+    case $1 in
+        "test")
+            # Removing `tee` from the pipeline allows bash to run this, but we
+            # lose our test output. There are ways around it but since I only
+            # expect to need this function in zsh I'm not planning to take the
+            # time to fix it.
+            exec 3>&1
+            local TESTS=$("$CARGO" $@ | tee >&3 \
+                | grep '^running ' \
+                | cut -f2 -d' ' \
+                | paste -sd+ \
+                | bc)
+            exec 3>&-
+
+            if [ -z "$TESTS" ]; then
+                echo -e "\n\033[0;31mWARNING\033[0m: Bash does not tee test" \
+                        "output properly. Ensure your test(s) actually ran."
+            elif [ "$TESTS" -eq 0 ]; then
+                echo -e "\a\n\033[0;31mWARNING\033[0m: Did not run any tests"
+            fi
+            ;;
+        *)
+            $CARGO $@
+            ;;
+    esac
+}
+
 # Search for packages when I'm certain I somewhat know the name.
 function showp() {
     if command -v apt-cache; then
