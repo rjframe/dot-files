@@ -55,7 +55,7 @@ ap_format = "{ssid} ({strength})"
 [[block]]
 block = "battery"
 interval = 300
-format = "{percentage}% ({time})"
+format = "{percentage} ({time})"
 
 [[block]]
 block = "memory"
