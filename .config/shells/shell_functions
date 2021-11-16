@@ -98,8 +98,8 @@ function poml() {
 # - Allow specifying a date or date offset from today
 # - Basic weekly/monthly graphs
 function pomr() {
-    tail -n20 "$HOME/.pom_log" | while read rec;
-        do case $(echo "$rec" | cut -f2) in $(date -Idate)*) echo a
-        esac;
+    tail -n25 "$HOME/.pom_log" | while read rec; do
+        case $(echo "$rec" | cut -f2) in $(date -Idate)*) echo
+        esac
     done | wc -l
 }

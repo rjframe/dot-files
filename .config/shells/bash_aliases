@@ -78,7 +78,7 @@ alias pom="echo 'notify-send --urgency=normal \"STEP AWAY FROM THE COMPUTER\"' \
     | at now + 50 minutes"
 
 # List pomodoro projects.
-alias pomp="cut -f1 $HOME/.pom_log | uniq"
+alias pomp="cut -f1 $HOME/.pom_log | sort | uniq"
 
 # uPIM aliases
 alias ue=upim-edit
