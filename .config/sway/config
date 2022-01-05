@@ -184,8 +184,18 @@ bindsym $mod+a focus parent
 
 # Scratchpad:
 
-# Sway has a "scratchpad", which is a bag of holding for windows.
-# You can send windows there and get them back later.
+# Open my daily code log and emulate giving it a special scratchpad.
+set $load_daily_log $term --class=kitty_daily_log \
+    --session=$HOME/.config/kitty/daily_log.conf \
+    --override background_opacity=0.8
+
+exec $load_daily_log
+# Turns out that exiting vim is deeply ingrained into my psyche.
+bindsym $mod+Shift+equal exec $load_daily_log
+
+for_window [app_id="kitty_daily_log"] move to scratchpad
+bindsym $mod+equal [app_id="kitty_daily_log"] scratchpad show
+
 
 # Move the currently focused window to the scratchpad
 bindsym $mod+Shift+minus move scratchpad
@@ -193,6 +203,11 @@ bindsym $mod+Shift+minus move scratchpad
 # Show the next scratchpad window or hide the focused scratchpad window.
 # If there are multiple scratchpad windows, this command cycles through them.
 bindsym $mod+minus scratchpad show
+
+# `scratchpad show` with criteria shows all windows at once, rather than cycling
+# through them. If that ever changes, we'll use this to cycle everything except
+# the log.
+#bindsym $mod+minus [app_id="(kitty_daily_log){0}"] scratchpad show
 
 # Resizing containers:
 
