@@ -33,6 +33,9 @@ vim +PluginInstall +qall
 ln -s "$BASE/.gitconfig" "$HOME/.gitconfig"
 ln -s "$BASE/.gitconfig" "$HOME/.gitignore"
 
+mkdir -p "$HOME/bin"
+ln -s "$BASE/bin/rust-analyzer-wrapper.sh" "$HOME/bin/"
+
 services=(
     mbsync.service
     mbsync.timer
